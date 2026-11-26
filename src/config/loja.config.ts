@@ -109,20 +109,16 @@ export const loja: ConfigLoja = {
   // Círculos da home, como os destaques do Instagram. `link` pode ser uma categoria ou uma coleção filtrada.
   destaques: [
     { nome: 'Novidades', link: '/catalogo?tag=novidade', imagem: '/produtos/vestido-acetinado-dourado-2.webp' },
-    { nome: 'Blusas e camisas', link: '/catalogo/blusas-e-camisas', imagem: '/produtos/camisa-gola-perolas-1.webp' },
     { nome: 'Conjuntos', link: '/catalogo/conjuntos', imagem: '/produtos/conjunto-colete-saia-plissada-2.webp' },
     { nome: 'Vestidos e saias', link: '/catalogo/vestidos-e-saias', imagem: '/produtos/vestido-plissado-um-ombro-2.webp' },
-    { nome: 'Calças', link: '/catalogo/calcas', imagem: '/produtos/calca-alfaiataria-oliva-1.webp' },
     { nome: 'Plus Size', link: '/catalogo?tag=plus+size', imagem: '/produtos/conjunto-camisa-pantalona-2.webp' },
-    { nome: 'Promo', link: '/catalogo?promo=1', imagem: '/produtos/blusa-viscose-1.webp' },
+    { nome: 'Promo', link: '/catalogo?promo=1', imagem: '/produtos/macacao-canelado-toque-macio-2.webp' },
   ],
 
   // Looks prontos: combinações de peças que a cliente pode pôr na sacola de uma vez.
-  looks: [
-    { id: 'trabalho', nome: 'Para o trabalho', produtos: ['cropped-trico-canelado', 'calca-alfaiataria-oliva'] },
-    { id: 'culto', nome: 'Culto de domingo', produtos: ['camisa-gola-perolas', 'saia-midi-plissada'] },
-    { id: 'casual', nome: 'Passeio leve', produtos: ['camisa-amarracao', 'calca-jeans-reta'] },
-  ],
+  // Exemplo: { id: 'trabalho', nome: 'Para o trabalho', produtos: ['id-da-blusa', 'id-da-calca'] }
+  // Lista vazia = a seção não aparece na home.
+  looks: [],
 
   plusSize: {
     titulo: 'Do slim ao plus size',

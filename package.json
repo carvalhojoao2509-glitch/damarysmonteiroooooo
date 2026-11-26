@@ -8,7 +8,6 @@
     "build": "tsc -b && vite build && tsx scripts/pos-build.ts",
     "preview": "vite preview",
     "imagens": "tsx scripts/otimizar-imagens.ts",
-    "imagens:exemplo": "tsx scripts/gerar-imagens-exemplo.ts",
     "planilha:json": "tsx scripts/planilha-para-json.ts"
   },
   "dependencies": {

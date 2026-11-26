@@ -8,7 +8,7 @@ Site 100% estático (Vite + React + TypeScript + Tailwind CSS), sem backend e se
 Pode ser hospedado de graça na Vercel ou na Netlify.
 
 Esta cópia está configurada como **demonstração para a Dâmarys Monteiro** (3 lojas em Vitória/ES).
-As fotos são ilustrações provisórias, e endereços, telefones e preços são de exemplo
+O catálogo de exemplo tem 5 peças com fotos; preços, tamanhos, estoque, endereços e telefones são de exemplo
 (ver [O que pedir à cliente](#o-que-pedir-à-cliente-antes-de-publicar)).
 
 ---
@@ -34,7 +34,6 @@ Outros comandos:
 | `npm run preview` | Abre o site final gerado, para conferir antes de publicar |
 | `npm run imagens` | Converte as fotos de `fotos-originais/` em WebP leve dentro de `public/produtos/` |
 | `npm run planilha:json` | Converte uma planilha CSV (arquivo ou link) em `src/data/produtos.json` |
-| `npm run imagens:exemplo` | Recria as ilustrações de exemplo (só para a demonstração) |
 
 ## Onde fica cada coisa
 
@@ -72,7 +71,7 @@ src/utils/                  busca, filtros, disponibilidade, preços
    na config, os nomes em `fontes`. Catálogo: https://fontsource.org
 5. **Produtos**: monte a planilha (ver abaixo) ou edite `src/data/produtos.json`.
    Fotos: coloque em `fotos-originais/` e rode `npm run imagens`.
-6. Apague as fotos de exemplo de `public/produtos/` que não forem mais usadas.
+6. Apague de `public/produtos/` as fotos da loja de exemplo.
 7. `npm run build` e `npm run preview` para conferir. Depois publique.
 
 ---

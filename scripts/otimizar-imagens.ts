@@ -3,10 +3,10 @@
 //
 // Uso:
 //   1. Coloque as fotos em fotos-originais/ com o nome desejado.
-//      Ex.: fotos-originais/camisa-gola-perolas-1.jpg
+//      Ex.: fotos-originais/vestido-plissado-um-ombro-1.jpg
 //   2. npm run imagens
-//   3. As versões otimizadas vão para public/produtos/camisa-gola-perolas-1.webp
-//   4. Na planilha, use /produtos/camisa-gola-perolas-1.webp na coluna "imagens".
+//   3. As versões otimizadas vão para public/produtos/vestido-plissado-um-ombro-1.webp
+//   4. Na planilha, use /produtos/vestido-plissado-um-ombro-1.webp na coluna "imagens".
 //
 // Opções: npm run imagens -- pasta-de-entrada --sem-corte
 //   --sem-corte  mantém a foto inteira (encaixa com fundo da loja) em vez de recortar.

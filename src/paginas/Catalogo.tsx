@@ -171,7 +171,7 @@ export default function Catalogo() {
           id="busca"
           type="search"
           enterKeyHint="search"
-          placeholder="Buscar: camisa, linho, vinho…"
+          placeholder="Buscar: vestido, plissado, vinho…"
           className="campo pl-11"
           value={filtros.busca}
           onChange={(e) => atualizar({ busca: e.target.value })}
