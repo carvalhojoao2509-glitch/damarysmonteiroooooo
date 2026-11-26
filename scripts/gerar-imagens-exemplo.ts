@@ -1,5 +1,6 @@
 // Gera as imagens ILUSTRATIVAS dos produtos de exemplo (public/produtos/*.webp).
 // Servem só para a demonstração: em um cliente real, use as fotos das peças
+// (peças que já têm foto real NÃO estão nesta lista, para não serem sobrescritas)
 // (veja scripts/otimizar-imagens.ts). Uso: npm run imagens:exemplo
 
 import { mkdir } from 'node:fs/promises'
@@ -17,16 +18,12 @@ interface Peca { id: string; forma: Forma; cor: string; estampa: Estampa; fundo:
 const pecas: Peca[] = [
   { id: 'cropped-trico-canelado', forma: 'cropped', cor: '#B5563A', estampa: 'canelado', fundo: '#EFE4DA' },
   { id: 'calca-alfaiataria-oliva', forma: 'calca', cor: '#6B6B3A', estampa: 'liso', fundo: '#ECE6DA', detalhe: 'cinto' },
-  { id: 'conjunto-colete-saia-plissada', forma: 'conjunto', cor: '#A9D8C3', estampa: 'plissado', fundo: '#F2ECE4' },
-  { id: 'conjunto-acetinado-dourado', forma: 'conjunto', cor: '#C9A45C', estampa: 'acetinado', fundo: '#EFE6E0' },
   { id: 'camisa-gola-perolas', forma: 'camisa', cor: '#FBFAF7', estampa: 'liso', fundo: '#E8DCCB', detalhe: 'perolas' },
   { id: 'camisa-amarracao', forma: 'camisa', cor: '#FBFAF7', estampa: 'liso', fundo: '#E3E6EA', detalhe: 'amarracao' },
   { id: 'conjunto-camisa-short-menta', forma: 'conjunto-short', cor: '#A9D8C3', estampa: 'liso', fundo: '#F1ECE5' },
-  { id: 'conjunto-toque-macio', forma: 'conjunto-calca', cor: '#5A1E24', estampa: 'canelado', fundo: '#EDE3DA' },
   { id: 'blusa-viscose', forma: 'blusa', cor: '#E3A5B4', estampa: 'liso', fundo: '#F2EAE6' },
   { id: 'blusa-laco', forma: 'blusa', cor: '#5A1E24', estampa: 'acetinado', fundo: '#EDE6E0', detalhe: 'laco' },
   { id: 'vestido-midi-envelope', forma: 'vestido-midi', cor: '#1F2C4D', estampa: 'liso', fundo: '#E6E4E2', detalhe: 'amarracao' },
-  { id: 'vestido-longo-festa', forma: 'vestido-longo', cor: '#1F6B52', estampa: 'acetinado', fundo: '#ECE6DF' },
   { id: 'saia-midi-plissada', forma: 'saia-midi', cor: '#DCC4AE', estampa: 'plissado', fundo: '#EDE7E2' },
   { id: 'saia-lapis', forma: 'saia-lapis', cor: '#26211F', estampa: 'liso', fundo: '#EAE3DC' },
   { id: 'calca-pantalona-linho', forma: 'calca', cor: '#D9C3A5', estampa: 'liso', fundo: '#EBE5DE' },

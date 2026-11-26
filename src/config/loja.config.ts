@@ -100,20 +100,20 @@ export const loja: ConfigLoja = {
 
   campanha: {
     titulo: 'Coleção nova',
-    texto: 'Conjuntos, tricô e alfaiataria em tons de vinho, menta e oliva. Conforto que veste e valoriza.',
+    texto: 'Cetim, plissados e alfaiataria em dourado, menta e vinho. Conforto que veste e valoriza.',
     botao: 'Ver a coleção',
     link: '/catalogo?tag=novidade',
-    produtosVitrine: ['conjunto-colete-saia-plissada', 'cropped-trico-canelado', 'conjunto-acetinado-dourado'],
+    produtosVitrine: ['vestido-acetinado-dourado', 'conjunto-colete-saia-plissada', 'vestido-plissado-um-ombro'],
   },
 
   // Círculos da home, como os destaques do Instagram. `link` pode ser uma categoria ou uma coleção filtrada.
   destaques: [
-    { nome: 'Novidades', link: '/catalogo?tag=novidade', imagem: '/produtos/conjunto-acetinado-dourado-1.webp' },
+    { nome: 'Novidades', link: '/catalogo?tag=novidade', imagem: '/produtos/vestido-acetinado-dourado-2.webp' },
     { nome: 'Blusas e camisas', link: '/catalogo/blusas-e-camisas', imagem: '/produtos/camisa-gola-perolas-1.webp' },
-    { nome: 'Conjuntos', link: '/catalogo/conjuntos', imagem: '/produtos/conjunto-toque-macio-1.webp' },
-    { nome: 'Vestidos e saias', link: '/catalogo/vestidos-e-saias', imagem: '/produtos/vestido-longo-festa-1.webp' },
+    { nome: 'Conjuntos', link: '/catalogo/conjuntos', imagem: '/produtos/conjunto-colete-saia-plissada-2.webp' },
+    { nome: 'Vestidos e saias', link: '/catalogo/vestidos-e-saias', imagem: '/produtos/vestido-plissado-um-ombro-2.webp' },
     { nome: 'Calças', link: '/catalogo/calcas', imagem: '/produtos/calca-alfaiataria-oliva-1.webp' },
-    { nome: 'Plus Size', link: '/catalogo?tag=plus+size', imagem: '/produtos/vestido-plus-floral-1.webp' },
+    { nome: 'Plus Size', link: '/catalogo?tag=plus+size', imagem: '/produtos/conjunto-camisa-pantalona-2.webp' },
     { nome: 'Promo', link: '/catalogo?promo=1', imagem: '/produtos/blusa-viscose-1.webp' },
   ],
 

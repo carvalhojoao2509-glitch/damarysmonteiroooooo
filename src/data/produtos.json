@@ -26,7 +26,7 @@
     ],
     "publico": "Feminino",
     "ativo": true,
-    "dataCadastro": "2026-11-24",
+    "dataCadastro": "2026-11-21",
     "estoque": {
       "reta-da-penha": "P:1;M:2;G:1",
       "itarare": "M:1;G:0",
@@ -74,7 +74,7 @@
   {
     "id": "conjunto-colete-saia-plissada",
     "nome": "Conjunto Colete e Saia Plissada",
-    "descricao": "Colete alongado e saia longa plissada no mesmo tom. Dá para usar juntos ou separados.",
+    "descricao": "Colete alfaiatado com botões encapados e saia longa plissada em tule, no mesmo tom de verde-menta. Dá para usar juntos ou separados.",
     "categoria": "Conjuntos",
     "subcategoria": "Colete e saia",
     "preco": 349.9,
@@ -98,7 +98,7 @@
     ],
     "publico": "Feminino",
     "ativo": true,
-    "dataCadastro": "2026-11-22",
+    "dataCadastro": "2026-11-25",
     "estoque": {
       "reta-da-penha": "P:1;M:1;G:1;GG:0",
       "itarare": "M:1;G:2",
@@ -106,21 +106,22 @@
     }
   },
   {
-    "id": "conjunto-acetinado-dourado",
-    "nome": "Conjunto Acetinado Gola Drapeada",
-    "descricao": "Blusa de gola drapeada e saia midi em tecido acetinado. Para casamentos, formaturas e eventos.",
-    "categoria": "Conjuntos",
-    "subcategoria": "Festa",
-    "preco": 389.9,
+    "id": "vestido-acetinado-dourado",
+    "nome": "Vestido Longo Acetinado Gola Drapeada",
+    "descricao": "Vestido longo em cetim com gola drapeada, franzido na cintura e saia sereia. Para casamentos, formaturas e eventos.",
+    "categoria": "Vestidos e saias",
+    "subcategoria": "Vestido longo",
+    "preco": 429.9,
     "precoPromocional": null,
     "imagens": [
-      "/produtos/conjunto-acetinado-dourado-1.webp",
-      "/produtos/conjunto-acetinado-dourado-2.webp"
+      "/produtos/vestido-acetinado-dourado-1.webp",
+      "/produtos/vestido-acetinado-dourado-2.webp"
     ],
     "tamanhos": [
       "P",
       "M",
-      "G"
+      "G",
+      "GG"
     ],
     "cores": [
       "Dourada"
@@ -131,11 +132,47 @@
     ],
     "publico": "Feminino",
     "ativo": true,
-    "dataCadastro": "2026-11-23",
+    "dataCadastro": "2026-11-26",
     "estoque": {
       "reta-da-penha": "M:1;G:1",
       "itarare": "nao",
-      "sao-pedro": "P:1;M:1"
+      "sao-pedro": "P:1;M:1;GG:1"
+    }
+  },
+  {
+    "id": "conjunto-camisa-pantalona",
+    "nome": "Conjunto Camisa e Pantalona com Faixa",
+    "descricao": "Camisa de manga curta dobrável com faixa para amarrar e calça pantalona no mesmo tecido. Fica bem do slim ao plus size.",
+    "categoria": "Conjuntos",
+    "subcategoria": "Pantalona",
+    "preco": 299.9,
+    "precoPromocional": null,
+    "imagens": [
+      "/produtos/conjunto-camisa-pantalona-1.webp",
+      "/produtos/conjunto-camisa-pantalona-2.webp"
+    ],
+    "tamanhos": [
+      "M",
+      "G",
+      "GG",
+      "G1",
+      "G2",
+      "G3"
+    ],
+    "cores": [
+      "Bege"
+    ],
+    "tags": [
+      "novidade",
+      "plus size"
+    ],
+    "publico": "Feminino",
+    "ativo": true,
+    "dataCadastro": "2026-11-24",
+    "estoque": {
+      "reta-da-penha": "M:1;G:2;G1:1;G2:1",
+      "itarare": "GG:1;G1:2;G3:1",
+      "sao-pedro": "sim"
     }
   },
   {
@@ -240,16 +277,16 @@
     }
   },
   {
-    "id": "conjunto-toque-macio",
-    "nome": "Conjunto Canelado Toque Macio",
-    "descricao": "Blusa e calça em malha canelada macia. Conforto que veste e valoriza.",
+    "id": "macacao-canelado-toque-macio",
+    "nome": "Macacão Canelado Toque Macio",
+    "descricao": "Macacão de malha canelada macia, com manga curta, perna ampla e cinto de fivela dourada. Conforto que veste e valoriza.",
     "categoria": "Conjuntos",
-    "subcategoria": "Canelado",
-    "preco": 259.9,
+    "subcategoria": "Macacão",
+    "preco": 279.9,
     "precoPromocional": null,
     "imagens": [
-      "/produtos/conjunto-toque-macio-1.webp",
-      "/produtos/conjunto-toque-macio-2.webp"
+      "/produtos/macacao-canelado-toque-macio-1.webp",
+      "/produtos/macacao-canelado-toque-macio-2.webp"
     ],
     "tamanhos": [
       "P",
@@ -261,16 +298,16 @@
       "G3"
     ],
     "cores": [
-      "Vinho",
-      "Preta"
+      "Vinho"
     ],
     "tags": [
+      "novidade",
       "mais vendido",
       "plus size"
     ],
     "publico": "Feminino",
     "ativo": true,
-    "dataCadastro": "2026-11-05",
+    "dataCadastro": "2026-11-24",
     "estoque": {
       "reta-da-penha": "M:2;G:2;G1:1;G3:1",
       "itarare": "P:1;GG:1;G2:1",
@@ -386,24 +423,24 @@
     }
   },
   {
-    "id": "vestido-longo-festa",
-    "nome": "Vestido Longo de Festa",
-    "descricao": "Vestido longo acetinado com alças finas e fenda discreta. Para madrinhas e eventos.",
+    "id": "vestido-plissado-um-ombro",
+    "nome": "Vestido Midi Plissado Um Ombro",
+    "descricao": "Vestido midi plissado de um ombro só, com manga bufante e punho de elástico. Para eventos e para o culto.",
     "categoria": "Vestidos e saias",
-    "subcategoria": "Vestido longo",
-    "preco": 429.9,
+    "subcategoria": "Vestido midi",
+    "preco": 319.9,
     "precoPromocional": null,
     "imagens": [
-      "/produtos/vestido-longo-festa-1.webp",
-      "/produtos/vestido-longo-festa-2.webp"
+      "/produtos/vestido-plissado-um-ombro-1.webp",
+      "/produtos/vestido-plissado-um-ombro-2.webp"
     ],
     "tamanhos": [
       "P",
       "M",
-      "G"
+      "G",
+      "GG"
     ],
     "cores": [
-      "Verde-esmeralda",
       "Vinho"
     ],
     "tags": [
@@ -412,11 +449,11 @@
     ],
     "publico": "Feminino",
     "ativo": true,
-    "dataCadastro": "2026-11-19",
+    "dataCadastro": "2026-11-25",
     "estoque": {
-      "reta-da-penha": "M:1",
-      "itarare": "P:1;G:1",
-      "sao-pedro": "nao"
+      "reta-da-penha": "P:1;M:1;G:1",
+      "itarare": "M:1",
+      "sao-pedro": "G:1;GG:1"
     }
   },
   {
