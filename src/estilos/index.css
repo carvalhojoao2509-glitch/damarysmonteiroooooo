@@ -1,0 +1,103 @@
+@import 'tailwindcss';
+
+/*
+  As cores e fontes vêm do loja.config.ts, gravadas no <head> como variáveis
+  CSS (--cor-*, --fonte-*). Aqui elas viram classes do Tailwind:
+  bg-primaria, text-texto, font-titulo etc.
+*/
+@theme inline {
+  --color-primaria: var(--cor-primaria);
+  --color-sobre-primaria: var(--cor-texto-sobre-primaria);
+  --color-secundaria: var(--cor-secundaria);
+  --color-fundo: var(--cor-fundo);
+  --color-superficie: var(--cor-superficie);
+  --color-texto: var(--cor-texto);
+  --color-suave: var(--cor-texto-suave);
+  --color-destaque: var(--cor-destaque);
+  --color-disponivel: var(--cor-disponivel);
+  --font-titulo: var(--fonte-titulo);
+  --font-texto: var(--fonte-texto);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--fonte-texto);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--fonte-titulo);
+    font-weight: 400;
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+  /* Foco sempre visível para quem navega pelo teclado */
+  :focus-visible {
+    outline: 2px solid var(--cor-primaria);
+    outline-offset: 2px;
+  }
+  button,
+  [role='button'],
+  label[for] {
+    cursor: pointer;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Faixa do "letreiro": o vinho da fachada com as letras claras */
+  .letreiro {
+    background: var(--cor-primaria);
+    color: var(--cor-texto-sobre-primaria);
+  }
+  /* Esquadria da vitrine: moldura branca entre os vidros */
+  .vitrine {
+    display: grid;
+    gap: 6px;
+    padding: 6px;
+    background: #fff;
+    box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.06);
+  }
+  .campo {
+    width: 100%;
+    border: 1px solid color-mix(in srgb, var(--cor-texto) 25%, transparent);
+    border-radius: 6px;
+    background: #fff;
+    padding: 0.7rem 0.85rem;
+    font-size: 1rem;
+  }
+  .campo:focus-visible {
+    outline: 2px solid var(--cor-primaria);
+    outline-offset: 0;
+    border-color: var(--cor-primaria);
+  }
+  /* Esconde a barra de rolagem em carrosséis horizontais, sem perder a rolagem */
+  .sem-barra {
+    scrollbar-width: none;
+  }
+  .sem-barra::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+dialog::backdrop {
+  background: rgb(20 8 12 / 0.55);
+}

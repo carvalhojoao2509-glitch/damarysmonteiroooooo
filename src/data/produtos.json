@@ -1,0 +1,714 @@
+[
+  {
+    "id": "cropped-trico-canelado",
+    "nome": "Cropped Tricô Canelado",
+    "descricao": "Cropped de alcinha em tricô canelado, macio e com bom caimento. Fica lindo com calça de alfaiataria e cinto.",
+    "categoria": "Blusas e camisas",
+    "subcategoria": "Tricô",
+    "preco": 119.9,
+    "precoPromocional": null,
+    "imagens": [
+      "/produtos/cropped-trico-canelado-1.webp",
+      "/produtos/cropped-trico-canelado-2.webp"
+    ],
+    "tamanhos": [
+      "P",
+      "M",
+      "G"
+    ],
+    "cores": [
+      "Terracota",
+      "Off-white",
+      "Preta"
+    ],
+    "tags": [
+      "novidade"
+    ],
+    "publico": "Feminino",
+    "ativo": true,
+    "dataCadastro": "2026-11-24",
+    "estoque": {
+      "reta-da-penha": "P:1;M:2;G:1",
+      "itarare": "M:1;G:0",
+      "sao-pedro": "sim"
+    }
+  },
+  {
+    "id": "calca-alfaiataria-oliva",
+    "nome": "Calça Alfaiataria com Cinto",
+    "descricao": "Calça de alfaiataria de cintura alta com pregas e cinto incluso. Do P ao G2.",
+    "categoria": "Calças",
+    "subcategoria": "Alfaiataria",
+    "preco": 229.9,
+    "precoPromocional": null,
+    "imagens": [
+      "/produtos/calca-alfaiataria-oliva-1.webp",
+      "/produtos/calca-alfaiataria-oliva-2.webp"
+    ],
+    "tamanhos": [
+      "P",
+      "M",
+      "G",
+      "GG",
+      "G1",
+      "G2"
+    ],
+    "cores": [
+      "Verde-oliva",
+      "Preta",
+      "Bege"
+    ],
+    "tags": [
+      "mais vendido",
+      "plus size"
+    ],
+    "publico": "Feminino",
+    "ativo": true,
+    "dataCadastro": "2026-11-10",
+    "estoque": {
+      "reta-da-penha": "M:2;G:1;GG:1;G1:1;G2:0",
+      "itarare": "P:1;M:1;G:1",
+      "sao-pedro": "consultar"
+    }
+  },
+  {
+    "id": "conjunto-colete-saia-plissada",
+    "nome": "Conjunto Colete e Saia Plissada",
+    "descricao": "Colete alongado e saia longa plissada no mesmo tom. Dá para usar juntos ou separados.",
+    "categoria": "Conjuntos",
+    "subcategoria": "Colete e saia",
+    "preco": 349.9,
+    "precoPromocional": null,
+    "imagens": [
+      "/produtos/conjunto-colete-saia-plissada-1.webp",
+      "/produtos/conjunto-colete-saia-plissada-2.webp"
+    ],
+    "tamanhos": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ],
+    "cores": [
+      "Verde-menta"
+    ],
+    "tags": [
+      "novidade",
+      "mais vendido"
+    ],
+    "publico": "Feminino",
+    "ativo": true,
+    "dataCadastro": "2026-11-22",
+    "estoque": {
+      "reta-da-penha": "P:1;M:1;G:1;GG:0",
+      "itarare": "M:1;G:2",
+      "sao-pedro": "nao"
+    }
+  },
+  {
+    "id": "conjunto-acetinado-dourado",
+    "nome": "Conjunto Acetinado Gola Drapeada",
+    "descricao": "Blusa de gola drapeada e saia midi em tecido acetinado. Para casamentos, formaturas e eventos.",
+    "categoria": "Conjuntos",
+    "subcategoria": "Festa",
+    "preco": 389.9,
+    "precoPromocional": null,
+    "imagens": [
+      "/produtos/conjunto-acetinado-dourado-1.webp",
+      "/produtos/conjunto-acetinado-dourado-2.webp"
+    ],
+    "tamanhos": [
+      "P",
+      "M",
+      "G"
+    ],
+    "cores": [
+      "Dourada"
+    ],
+    "tags": [
+      "novidade",
+      "festa"
+    ],
+    "publico": "Feminino",
+    "ativo": true,
+    "dataCadastro": "2026-11-23",
+    "estoque": {
+      "reta-da-penha": "M:1;G:1",
+      "itarare": "nao",
+      "sao-pedro": "P:1;M:1"
+    }
+  },
+  {
+    "id": "camisa-gola-perolas",
+    "nome": "Camisa Gola de Pérolas",
+    "descricao": "Camisa branca de tecido leve com aplicação de pérolas na gola.",
+    "categoria": "Blusas e camisas",
+    "subcategoria": "Camisa",
+    "preco": 189.9,
+    "precoPromocional": null,
+    "imagens": [
+      "/produtos/camisa-gola-perolas-1.webp",
+      "/produtos/camisa-gola-perolas-2.webp"
+    ],
+    "tamanhos": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ],
+    "cores": [
+      "Branca"
+    ],
+    "tags": [
+      "mais vendido"
+    ],
+    "publico": "Feminino",
+    "ativo": true,
+    "dataCadastro": "2026-10-28",
+    "estoque": {
+      "reta-da-penha": "sim",
+      "itarare": "sim",
+      "sao-pedro": "consultar"
+    }
+  },
+  {
+    "id": "camisa-amarracao",
+    "nome": "Camisa com Amarração",
+    "descricao": "Camisa de manga longa com amarração na cintura. Combina com jeans e com saia.",
+    "categoria": "Blusas e camisas",
+    "subcategoria": "Camisa",
+    "preco": 159.9,
+    "precoPromocional": 129.9,
+    "imagens": [
+      "/produtos/camisa-amarracao-1.webp",
+      "/produtos/camisa-amarracao-2.webp"
+    ],
+    "tamanhos": [
+      "P",
+      "M",
+      "G",
+      "G1",
+      "G2"
+    ],
+    "cores": [
+      "Branca",
+      "Azul-claro"
+    ],
+    "tags": [
+      "promocao",
+      "plus size"
+    ],
+    "publico": "Feminino",
+    "ativo": true,
+    "dataCadastro": "2026-09-30",
+    "estoque": {
+      "reta-da-penha": "sim",
+      "itarare": "nao",
+      "sao-pedro": "sim"
+    }
+  },
+  {
+    "id": "conjunto-camisa-short-menta",
+    "nome": "Conjunto Camisa e Short",
+    "descricao": "Camisa de manga curta e short de cintura alta em linho misto.",
+    "categoria": "Conjuntos",
+    "subcategoria": "Short",
+    "preco": 279.9,
+    "precoPromocional": null,
+    "imagens": [
+      "/produtos/conjunto-camisa-short-menta-1.webp",
+      "/produtos/conjunto-camisa-short-menta-2.webp"
+    ],
+    "tamanhos": [
+      "P",
+      "M",
+      "G"
+    ],
+    "cores": [
+      "Verde-menta"
+    ],
+    "tags": [
+      "novidade"
+    ],
+    "publico": "Feminino",
+    "ativo": true,
+    "dataCadastro": "2026-11-15",
+    "estoque": {
+      "reta-da-penha": "sim",
+      "itarare": "consultar",
+      "sao-pedro": "sim"
+    }
+  },
+  {
+    "id": "conjunto-toque-macio",
+    "nome": "Conjunto Canelado Toque Macio",
+    "descricao": "Blusa e calça em malha canelada macia. Conforto que veste e valoriza.",
+    "categoria": "Conjuntos",
+    "subcategoria": "Canelado",
+    "preco": 259.9,
+    "precoPromocional": null,
+    "imagens": [
+      "/produtos/conjunto-toque-macio-1.webp",
+      "/produtos/conjunto-toque-macio-2.webp"
+    ],
+    "tamanhos": [
+      "P",
+      "M",
+      "G",
+      "GG",
+      "G1",
+      "G2",
+      "G3"
+    ],
+    "cores": [
+      "Vinho",
+      "Preta"
+    ],
+    "tags": [
+      "mais vendido",
+      "plus size"
+    ],
+    "publico": "Feminino",
+    "ativo": true,
+    "dataCadastro": "2026-11-05",
+    "estoque": {
+      "reta-da-penha": "M:2;G:2;G1:1;G3:1",
+      "itarare": "P:1;GG:1;G2:1",
+      "sao-pedro": "sim"
+    }
+  },
+  {
+    "id": "blusa-viscose",
+    "nome": "Blusa de Viscose Manga Curta",
+    "descricao": "Blusa básica de viscose com decote redondo. Da promo, nas cores da estação.",
+    "categoria": "Blusas e camisas",
+    "subcategoria": "Básica",
+    "preco": 89.9,
+    "precoPromocional": 69.9,
+    "imagens": [
+      "/produtos/blusa-viscose-1.webp",
+      "/produtos/blusa-viscose-2.webp"
+    ],
+    "tamanhos": [
+      "P",
+      "M",
+      "G",
+      "GG",
+      "G1",
+      "G2"
+    ],
+    "cores": [
+      "Rosa",
+      "Azul-claro",
+      "Off-white"
+    ],
+    "tags": [
+      "promocao",
+      "plus size"
+    ],
+    "publico": "Feminino",
+    "ativo": true,
+    "dataCadastro": "2026-10-12",
+    "estoque": {
+      "reta-da-penha": 8,
+      "itarare": 5,
+      "sao-pedro": "nao"
+    }
+  },
+  {
+    "id": "blusa-laco",
+    "nome": "Blusa com Laço na Gola",
+    "descricao": "Blusa fluida com laço na gola e punhos com botão.",
+    "categoria": "Blusas e camisas",
+    "subcategoria": "Blusa",
+    "preco": 139.9,
+    "precoPromocional": 109.9,
+    "imagens": [
+      "/produtos/blusa-laco-1.webp",
+      "/produtos/blusa-laco-2.webp"
+    ],
+    "tamanhos": [
+      "P",
+      "M",
+      "G"
+    ],
+    "cores": [
+      "Vinho",
+      "Off-white"
+    ],
+    "tags": [
+      "promocao"
+    ],
+    "publico": "Feminino",
+    "ativo": true,
+    "dataCadastro": "2026-09-18",
+    "estoque": {
+      "reta-da-penha": "sim",
+      "itarare": "sim",
+      "sao-pedro": "nao"
+    }
+  },
+  {
+    "id": "vestido-midi-envelope",
+    "nome": "Vestido Midi Envelope",
+    "descricao": "Vestido midi transpassado com faixa na cintura. Modelagem que valoriza do P ao G2.",
+    "categoria": "Vestidos e saias",
+    "subcategoria": "Vestido midi",
+    "preco": 249.9,
+    "precoPromocional": null,
+    "imagens": [
+      "/produtos/vestido-midi-envelope-1.webp",
+      "/produtos/vestido-midi-envelope-2.webp"
+    ],
+    "tamanhos": [
+      "P",
+      "M",
+      "G",
+      "GG",
+      "G1",
+      "G2"
+    ],
+    "cores": [
+      "Marinho",
+      "Vinho"
+    ],
+    "tags": [
+      "mais vendido",
+      "plus size"
+    ],
+    "publico": "Feminino",
+    "ativo": true,
+    "dataCadastro": "2026-10-20",
+    "estoque": {
+      "reta-da-penha": "sim",
+      "itarare": "sim",
+      "sao-pedro": "sim"
+    }
+  },
+  {
+    "id": "vestido-longo-festa",
+    "nome": "Vestido Longo de Festa",
+    "descricao": "Vestido longo acetinado com alças finas e fenda discreta. Para madrinhas e eventos.",
+    "categoria": "Vestidos e saias",
+    "subcategoria": "Vestido longo",
+    "preco": 429.9,
+    "precoPromocional": null,
+    "imagens": [
+      "/produtos/vestido-longo-festa-1.webp",
+      "/produtos/vestido-longo-festa-2.webp"
+    ],
+    "tamanhos": [
+      "P",
+      "M",
+      "G"
+    ],
+    "cores": [
+      "Verde-esmeralda",
+      "Vinho"
+    ],
+    "tags": [
+      "novidade",
+      "festa"
+    ],
+    "publico": "Feminino",
+    "ativo": true,
+    "dataCadastro": "2026-11-19",
+    "estoque": {
+      "reta-da-penha": "M:1",
+      "itarare": "P:1;G:1",
+      "sao-pedro": "nao"
+    }
+  },
+  {
+    "id": "saia-midi-plissada",
+    "nome": "Saia Midi Plissada",
+    "descricao": "Saia midi plissada com cós de elástico. Combina com camisa e com tricô.",
+    "categoria": "Vestidos e saias",
+    "subcategoria": "Saia",
+    "preco": 169.9,
+    "precoPromocional": null,
+    "imagens": [
+      "/produtos/saia-midi-plissada-1.webp",
+      "/produtos/saia-midi-plissada-2.webp"
+    ],
+    "tamanhos": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ],
+    "cores": [
+      "Nude",
+      "Preta"
+    ],
+    "tags": [],
+    "publico": "Feminino",
+    "ativo": true,
+    "dataCadastro": "2026-10-08",
+    "estoque": {
+      "reta-da-penha": "sim",
+      "itarare": "sim",
+      "sao-pedro": "sim"
+    }
+  },
+  {
+    "id": "saia-lapis",
+    "nome": "Saia Lápis Alfaiataria",
+    "descricao": "Saia lápis na altura do joelho com fenda atrás.",
+    "categoria": "Vestidos e saias",
+    "subcategoria": "Saia",
+    "preco": 179.9,
+    "precoPromocional": 149.9,
+    "imagens": [
+      "/produtos/saia-lapis-1.webp",
+      "/produtos/saia-lapis-2.webp"
+    ],
+    "tamanhos": [
+      "P",
+      "M",
+      "G",
+      "G1",
+      "G2"
+    ],
+    "cores": [
+      "Preta",
+      "Caramelo"
+    ],
+    "tags": [
+      "promocao",
+      "plus size"
+    ],
+    "publico": "Feminino",
+    "ativo": true,
+    "dataCadastro": "2026-09-02",
+    "estoque": {
+      "reta-da-penha": "consultar",
+      "itarare": "sim",
+      "sao-pedro": "sim"
+    }
+  },
+  {
+    "id": "calca-pantalona-linho",
+    "nome": "Calça Pantalona de Linho",
+    "descricao": "Pantalona de linho com elástico atrás e bolsos laterais.",
+    "categoria": "Calças",
+    "subcategoria": "Pantalona",
+    "preco": 199.9,
+    "precoPromocional": null,
+    "imagens": [
+      "/produtos/calca-pantalona-linho-1.webp",
+      "/produtos/calca-pantalona-linho-2.webp"
+    ],
+    "tamanhos": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ],
+    "cores": [
+      "Bege",
+      "Off-white"
+    ],
+    "tags": [
+      "novidade"
+    ],
+    "publico": "Feminino",
+    "ativo": true,
+    "dataCadastro": "2026-11-12",
+    "estoque": {
+      "reta-da-penha": "sim",
+      "itarare": "nao",
+      "sao-pedro": "sim"
+    }
+  },
+  {
+    "id": "calca-jeans-reta",
+    "nome": "Calça Jeans Reta",
+    "descricao": "Jeans de cintura alta e perna reta, lavagem média.",
+    "categoria": "Calças",
+    "subcategoria": "Jeans",
+    "preco": 199.9,
+    "precoPromocional": null,
+    "imagens": [
+      "/produtos/calca-jeans-reta-1.webp",
+      "/produtos/calca-jeans-reta-2.webp"
+    ],
+    "tamanhos": [
+      "36",
+      "38",
+      "40",
+      "42",
+      "44",
+      "46"
+    ],
+    "cores": [
+      "Jeans"
+    ],
+    "tags": [],
+    "publico": "Feminino",
+    "ativo": true,
+    "dataCadastro": "2026-08-25",
+    "estoque": {
+      "reta-da-penha": "38:2;40:1;42:0;44:1",
+      "itarare": "36:1;40:2",
+      "sao-pedro": "consultar"
+    }
+  },
+  {
+    "id": "macacao-alfaiataria",
+    "nome": "Macacão Alfaiataria",
+    "descricao": "Macacão de alfaiataria com decote V, faixa na cintura e perna ampla.",
+    "categoria": "Conjuntos",
+    "subcategoria": "Macacão",
+    "preco": 279.9,
+    "precoPromocional": null,
+    "imagens": [
+      "/produtos/macacao-alfaiataria-1.webp",
+      "/produtos/macacao-alfaiataria-2.webp"
+    ],
+    "tamanhos": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ],
+    "cores": [
+      "Preta",
+      "Vinho"
+    ],
+    "tags": [
+      "mais vendido"
+    ],
+    "publico": "Feminino",
+    "ativo": true,
+    "dataCadastro": "2026-08-12",
+    "estoque": {
+      "reta-da-penha": "sim",
+      "itarare": "sim",
+      "sao-pedro": "nao"
+    }
+  },
+  {
+    "id": "vestido-plus-floral",
+    "nome": "Vestido Floral Plus Size",
+    "descricao": "Vestido midi floral com manga bufante e elástico na cintura. Grade G1 a G3.",
+    "categoria": "Vestidos e saias",
+    "subcategoria": "Vestido midi",
+    "preco": 219.9,
+    "precoPromocional": null,
+    "imagens": [
+      "/produtos/vestido-plus-floral-1.webp",
+      "/produtos/vestido-plus-floral-2.webp"
+    ],
+    "tamanhos": [
+      "G1",
+      "G2",
+      "G3"
+    ],
+    "cores": [
+      "Estampada"
+    ],
+    "tags": [
+      "novidade",
+      "plus size"
+    ],
+    "publico": "Feminino",
+    "ativo": true,
+    "dataCadastro": "2026-11-20",
+    "estoque": {
+      "reta-da-penha": "G1:1;G2:2;G3:1",
+      "itarare": "G2:1",
+      "sao-pedro": "G1:1;G3:0"
+    }
+  },
+  {
+    "id": "blusa-cetim-plus",
+    "nome": "Blusa de Cetim Plus Size",
+    "descricao": "Blusa de cetim com manga ampla e decote canoa. Grade G1 a G3.",
+    "categoria": "Blusas e camisas",
+    "subcategoria": "Blusa",
+    "preco": 149.9,
+    "precoPromocional": null,
+    "imagens": [
+      "/produtos/blusa-cetim-plus-1.webp",
+      "/produtos/blusa-cetim-plus-2.webp"
+    ],
+    "tamanhos": [
+      "G1",
+      "G2",
+      "G3"
+    ],
+    "cores": [
+      "Off-white",
+      "Vinho"
+    ],
+    "tags": [
+      "plus size"
+    ],
+    "publico": "Feminino",
+    "ativo": true,
+    "dataCadastro": "2026-10-02",
+    "estoque": {
+      "reta-da-penha": "sim",
+      "itarare": "consultar",
+      "sao-pedro": "sim"
+    }
+  },
+  {
+    "id": "kimono-alongado",
+    "nome": "Kimono Alongado",
+    "descricao": "Kimono leve e alongado, com faixa para amarrar. Tamanho único.",
+    "categoria": "Blusas e camisas",
+    "subcategoria": "Kimono",
+    "preco": 179.9,
+    "precoPromocional": null,
+    "imagens": [
+      "/produtos/kimono-alongado-1.webp",
+      "/produtos/kimono-alongado-2.webp"
+    ],
+    "tamanhos": [
+      "Único"
+    ],
+    "cores": [
+      "Estampada"
+    ],
+    "tags": [],
+    "publico": "Feminino",
+    "ativo": true,
+    "dataCadastro": "2026-09-10",
+    "estoque": {
+      "reta-da-penha": "sim",
+      "itarare": "sim",
+      "sao-pedro": "sim"
+    }
+  },
+  {
+    "id": "vestido-tubinho",
+    "nome": "Vestido Tubinho (fora de linha)",
+    "descricao": "Exemplo de produto desativado: com ativo = não ele some do site sem precisar apagar a linha.",
+    "categoria": "Vestidos e saias",
+    "subcategoria": "Vestido curto",
+    "preco": 149.9,
+    "precoPromocional": null,
+    "imagens": [
+      "/produtos/vestido-midi-envelope-1.webp"
+    ],
+    "tamanhos": [
+      "P",
+      "M",
+      "G"
+    ],
+    "cores": [
+      "Preta"
+    ],
+    "tags": [],
+    "publico": "Feminino",
+    "ativo": false,
+    "dataCadastro": "2026-03-01",
+    "estoque": {
+      "reta-da-penha": "nao",
+      "itarare": "nao",
+      "sao-pedro": "nao"
+    }
+  }
+]
