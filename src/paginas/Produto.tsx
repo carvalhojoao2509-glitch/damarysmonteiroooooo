@@ -70,7 +70,7 @@ export default function Produto() {
 
   const linkCompraDireta = linkWhatsApp(
     unidade.whatsapp,
-    mensagemItemUnico({ ...item, chave: '', quantidade: 1 }, unidade, `${loja.urlSite}/produto/${produto.id}`),
+    mensagemItemUnico({ ...item, chave: '', quantidade: 1 }, unidade),
   )
 
   const relacionados = produtos.filter((p) => p.categoria === produto.categoria && p.id !== produto.id).slice(0, 4)

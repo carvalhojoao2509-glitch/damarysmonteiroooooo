@@ -21,13 +21,24 @@ export function linkWhatsApp(numero: string, mensagem?: string): string {
   return mensagem ? `${base}?text=${encodeURIComponent(mensagem)}` : base
 }
 
-/** "• 2x Camiseta Básica, tam. G, cor Preta, R$ 59,90 cada" */
+/** Endereço da página do produto (o WhatsApp mostra a foto na prévia do link). */
+export function urlProduto(produtoId: string): string {
+  return `${loja.urlSite.replace(/\/$/, '')}/produto/${produtoId}`
+}
+
+/**
+ * "• 2x Camiseta Básica, tam. G, cor Preta, R$ 59,90 cada"
+ * "  Foto: https://loja.com/produto/camiseta-basica"
+ * O WhatsApp não permite anexar imagem por link (wa.me só aceita texto). Por isso cada
+ * peça leva o link da sua página: o WhatsApp costuma mostrar a foto do primeiro link
+ * como prévia, e a atendente toca nos outros para ver cada modelo.
+ */
 function linhaItem(i: ItemSacola): string {
   const partes = [`• ${i.quantidade}x ${i.nome}`]
   if (i.tamanho) partes.push(`tam. ${i.tamanho}`)
   if (i.cor) partes.push(`cor ${i.cor}`)
   partes.push(i.quantidade > 1 ? `${formatarPreco(i.preco)} cada` : formatarPreco(i.preco))
-  return partes.join(', ')
+  return `${partes.join(', ')}\n   Foto: ${urlProduto(i.produtoId)}`
 }
 
 export function totalItens(itens: ItemSacola[]): number {
@@ -65,11 +76,10 @@ export function mensagemPedido(d: DadosPedido): string {
 }
 
 /** Mensagem curta do botão "Comprar pelo WhatsApp" na página do produto. */
-export function mensagemItemUnico(item: ItemSacola, unidade: Unidade, urlProduto: string): string {
+export function mensagemItemUnico(item: ItemSacola, unidade: Unidade): string {
   return [
     `Olá! Vim pelo catálogo da ${loja.nome} e tenho interesse neste item:`,
     linhaItem(item),
-    urlProduto,
     '',
     `Unidade: ${unidade.nome}`,
     'Pode confirmar a disponibilidade, por favor?',
