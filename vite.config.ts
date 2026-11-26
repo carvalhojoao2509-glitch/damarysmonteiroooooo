@@ -41,6 +41,7 @@ function configDaLoja(): Plugin {
             `<meta property="og:image:height" content="630" />`,
             `<meta name="twitter:card" content="summary_large_image" />`,
             `<style>${variaveis}</style>`,
+            ...(loja.demonstracao ? ['<meta name="robots" content="noindex, nofollow" />'] : []),
           ].join('\n    '),
         )
     },

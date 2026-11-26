@@ -40,6 +40,13 @@ export function Rodape() {
             ))}
           </ul>
           <ul className="mt-4 space-y-2">
+            {loja.grupoWhatsApp && (
+              <li>
+                <a href={loja.grupoWhatsApp.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
+                  {loja.grupoWhatsApp.rotulo} no WhatsApp
+                </a>
+              </li>
+            )}
             {loja.redesSociais.map((r) => (
               <li key={r.url}>
                 <a href={r.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">

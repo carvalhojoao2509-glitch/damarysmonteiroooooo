@@ -123,6 +123,11 @@ ${urls.map((u) => `  <url><loc>${url}${u === '/' ? '/' : u}</loc><lastmod>${hoje
 </urlset>
 `
 await writeFile(`${DIST}/sitemap.xml`, sitemap)
-await writeFile(`${DIST}/robots.txt`, `User-agent: *\nAllow: /\n\nSitemap: ${url}/sitemap.xml\n`)
+await writeFile(
+  `${DIST}/robots.txt`,
+  loja.demonstracao
+    ? 'User-agent: *\nDisallow: /\n' // demonstração: fora dos buscadores
+    : `User-agent: *\nAllow: /\n\nSitemap: ${url}/sitemap.xml\n`,
+)
 
 console.log(`✓ pós-build: ${urls.length} páginas com prévia própria + sitemap.xml (${url})`)

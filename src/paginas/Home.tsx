@@ -5,7 +5,7 @@ import { useProdutos } from '../contextos/ProdutosContext.tsx'
 import { GradeProdutos } from '../componentes/produto/CardProduto.tsx'
 import { Imagem } from '../componentes/ui/Imagem.tsx'
 import { Seo } from '../componentes/ui/Seo.tsx'
-import { IconeCoroa } from '../componentes/ui/Icones.tsx'
+import { IconeCoroa, IconeWhatsApp } from '../componentes/ui/Icones.tsx'
 import { emPromocao, formatarPreco, precoFinal } from '../utils/preco.ts'
 import type { Produto } from '../tipos/index.ts'
 
@@ -149,6 +149,25 @@ export default function Home() {
         <Secao titulo="Promo" link="/catalogo?promo=1" rotuloLink="Ver todas">
           <GradeProdutos produtos={promocoes} />
         </Secao>
+      )}
+
+      {loja.grupoWhatsApp && (
+        <section className="mx-auto mt-16 max-w-6xl px-4">
+          <div className="flex flex-col gap-4 rounded-lg border border-secundaria/50 bg-white/70 p-6 md:flex-row md:items-center md:justify-between">
+            <div>
+              <h2 className="text-[1.75rem]">{loja.grupoWhatsApp.rotulo}</h2>
+              <p className="mt-1 text-suave">{loja.grupoWhatsApp.texto}</p>
+            </div>
+            <a
+              href={loja.grupoWhatsApp.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex shrink-0 items-center justify-center gap-2 self-start rounded-md bg-[#1F7A45] px-6 py-3 font-semibold text-white hover:bg-[#186338] md:self-auto"
+            >
+              <IconeWhatsApp width={20} height={20} /> Entrar no {loja.grupoWhatsApp.rotulo}
+            </a>
+          </div>
+        </section>
       )}
 
       {loja.sobre && (

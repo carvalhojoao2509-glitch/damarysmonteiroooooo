@@ -17,7 +17,7 @@ export const loja: ConfigLoja = {
     'Conjuntos, camisas, alfaiataria e peças de festa, do slim ao plus size. Escolha no catálogo e finalize seu pedido pelo WhatsApp com uma das nossas 3 lojas em Vitória.',
 
   // Troque pelo domínio do cliente depois de publicar (sem barra no fim).
-  urlSite: 'https://catalogo-exemplo.vercel.app',
+  urlSite: 'https://damarys-monteiro-demo.vercel.app',
 
   // Vazio = o nome da loja aparece escrito com a fonte de título (como o letreiro).
   logo: '',
@@ -52,7 +52,8 @@ export const loja: ConfigLoja = {
   ],
 
   // ⚠️ [CONFIRMAR COM A CLIENTE] Os nomes dos bairros vêm do Instagram da loja.
-  // Endereços, horários e WhatsApp abaixo são PROVISÓRIOS. Troque antes de publicar.
+  // Endereços e horários abaixo são PROVISÓRIOS. O WhatsApp é o do atendimento online
+  // (o mesmo nas 3 lojas); se cada loja tiver o seu número, troque aqui.
   unidades: [
     {
       id: 'reta-da-penha',
@@ -60,7 +61,7 @@ export const loja: ConfigLoja = {
       endereco: 'Endereço a confirmar',
       bairroCidade: 'Reta da Penha, Vitória - ES',
       horarios: ['Seg a sex: 9h às 18h', 'Sáb: 9h às 13h'],
-      whatsapp: '5527999990001',
+      whatsapp: '5527996184125',
       linkMapa: 'https://www.google.com/maps/search/?api=1&query=Reta+da+Penha+Vit%C3%B3ria+ES',
     },
     {
@@ -69,7 +70,7 @@ export const loja: ConfigLoja = {
       endereco: 'Endereço a confirmar',
       bairroCidade: 'Itararé, Vitória - ES',
       horarios: ['Seg a sex: 9h às 18h', 'Sáb: 9h às 13h'],
-      whatsapp: '5527999990002',
+      whatsapp: '5527996184125',
       linkMapa: 'https://www.google.com/maps/search/?api=1&query=Itarar%C3%A9+Vit%C3%B3ria+ES',
     },
     {
@@ -78,7 +79,7 @@ export const loja: ConfigLoja = {
       endereco: 'Endereço a confirmar',
       bairroCidade: 'São Pedro, Vitória - ES',
       horarios: ['Seg a sex: 9h às 18h', 'Sáb: 9h às 13h'],
-      whatsapp: '5527999990003',
+      whatsapp: '5527996184125',
       linkMapa: 'https://www.google.com/maps/search/?api=1&query=S%C3%A3o+Pedro+Vit%C3%B3ria+ES',
     },
   ],
@@ -135,6 +136,15 @@ export const loja: ConfigLoja = {
     ],
     foto: '',
   },
+
+  grupoWhatsApp: {
+    rotulo: 'Grupo VIP',
+    texto: 'Novidades e promoções chegam primeiro no grupo.',
+    url: 'https://chat.whatsapp.com/BlWLEZswQrNBKpJX7k1Mky',
+  },
+
+  // Site de demonstração: fora do Google. Mude para false na versão final.
+  demonstracao: true,
 
   // Frase breve no rodapé (o tom do perfil é carinhoso e com fé). Deixe vazio para não mostrar.
   mensagemRodape: 'Que Deus abençoe o seu dia.',

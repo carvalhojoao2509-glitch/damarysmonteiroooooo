@@ -90,6 +90,13 @@ export interface ConfigLoja {
   /** Seção "Sobre" com a dona da marca. Omitir = não mostra. */
   sobre?: { titulo: string; texto: string[]; foto: string }
   mensagemRodape: string
+  /** Grupo de WhatsApp (ex.: Grupo VIP de novidades). Omitir = não mostra. */
+  grupoWhatsApp?: { rotulo: string; texto: string; url: string }
+  /**
+   * true = site de demonstração: pede aos buscadores para NÃO indexar
+   * (noindex + robots.txt). Mude para false na versão final do cliente.
+   */
+  demonstracao: boolean
   produtos: {
     fonte: 'json' | 'planilha'
     /** Link da planilha publicada como CSV (Arquivo > Compartilhar > Publicar na Web > CSV). */
