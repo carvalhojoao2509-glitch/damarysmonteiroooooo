@@ -28,6 +28,12 @@ export function SacolaProvider({ children }: { children: ReactNode }) {
 
   const adicionar = useCallback<ValorSacola['adicionar']>((item, quantidade = 1) => {
     const chave = `${item.produtoId}|${item.tamanho}|${item.cor}`
+    // Peça nova depois de um pedido enviado: a sacola volta a ser um pedido em montagem.
+    try {
+      window.sessionStorage.removeItem('catalogo:pedido-enviado')
+    } catch {
+      /* ignora */
+    }
     setItens((atual) => {
       const existente = atual.find((i) => i.chave === chave)
       if (existente) {

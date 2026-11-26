@@ -13,6 +13,23 @@ import { registrarPedidoWhatsApp } from '../servicos/metricas.ts'
 import { linkWhatsApp, mensagemPedido, textoTaxa } from '../servicos/whatsapp.ts'
 import { formatarPreco } from '../utils/preco.ts'
 
+const AVISO = 'catalogo:pedido-enviado'
+function lerAvisoEnviado(): boolean {
+  try {
+    return window.sessionStorage.getItem(AVISO) === '1'
+  } catch {
+    return false
+  }
+}
+function gravarAvisoEnviado(sim: boolean) {
+  try {
+    if (sim) window.sessionStorage.setItem(AVISO, '1')
+    else window.sessionStorage.removeItem(AVISO)
+  } catch {
+    /* sem armazenamento: a confirmação só aparece enquanto a página não recarrega */
+  }
+}
+
 export default function Sacola() {
   const { itens, subtotal, alterarQuantidade, remover, esvaziar, quantidadeTotal } = useSacola()
   const { unidade, escolher } = useUnidade()
@@ -24,8 +41,18 @@ export default function Sacola() {
   const [endereco, setEndereco] = useState('')
   const [observacoes, setObservacoes] = useState('')
   const [erros, setErros] = useState<Record<string, string>>({})
-  /** Link do WhatsApp do último pedido enviado (só na memória da página, nada é salvo). */
-  const [enviado, setEnviado] = useState<string | null>(null)
+  /**
+   * Pedido enviado? Guardamos só um aviso "sim" na sessão da aba (sem nome, endereço
+   * ou itens), para a confirmação continuar aparecendo quando a cliente volta do WhatsApp.
+   * O link com a mensagem fica apenas na memória da página.
+   */
+  const [enviado, setEnviadoEstado] = useState<boolean>(() => lerAvisoEnviado())
+  const [linkEnviado, setLinkEnviado] = useState<string | null>(null)
+  const setEnviado = (link: string | null) => {
+    setEnviadoEstado(link !== null)
+    setLinkEnviado(link)
+    gravarAvisoEnviado(link !== null)
+  }
 
   const entrega = loja.entregas.find((e) => e.id === entregaId)
   const taxa = typeof entrega?.taxa === 'number' ? entrega.taxa : 0
@@ -62,7 +89,7 @@ export default function Sacola() {
   }
 
   // Depois do envio: confirmação, com opção de reabrir o WhatsApp ou começar outro pedido.
-  if (enviado) {
+  if (enviado && itens.length > 0) {
     return (
       <div className="mx-auto max-w-xl px-4 py-14 text-center">
         <Seo titulo="Pedido enviado" />
@@ -72,9 +99,11 @@ export default function Sacola() {
           enviar no WhatsApp: o atendimento confirma preço e disponibilidade por lá.
         </p>
         <div className="mt-8 grid gap-3">
-          <a href={enviado} className="flex items-center justify-center gap-2 rounded-md bg-[#1F7A45] py-3.5 font-semibold text-white hover:bg-[#186338]">
-            <IconeWhatsApp /> Abrir o WhatsApp de novo
-          </a>
+          {linkEnviado && (
+            <a href={linkEnviado} className="flex items-center justify-center gap-2 rounded-md bg-[#1F7A45] py-3.5 font-semibold text-white hover:bg-[#186338]">
+              <IconeWhatsApp /> Abrir o WhatsApp de novo
+            </a>
+          )}
           <button
             type="button"
             onClick={() => {
