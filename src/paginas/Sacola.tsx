@@ -14,7 +14,7 @@ import { linkWhatsApp, mensagemPedido, textoTaxa } from '../servicos/whatsapp.ts
 import { formatarPreco } from '../utils/preco.ts'
 
 export default function Sacola() {
-  const { itens, subtotal, alterarQuantidade, remover, quantidadeTotal } = useSacola()
+  const { itens, subtotal, alterarQuantidade, remover, esvaziar, quantidadeTotal } = useSacola()
   const { unidade, escolher } = useUnidade()
 
   const [nome, setNome] = useState('')
@@ -24,6 +24,8 @@ export default function Sacola() {
   const [endereco, setEndereco] = useState('')
   const [observacoes, setObservacoes] = useState('')
   const [erros, setErros] = useState<Record<string, string>>({})
+  /** Link do WhatsApp do último pedido enviado (só na memória da página, nada é salvo). */
+  const [enviado, setEnviado] = useState<string | null>(null)
 
   const entrega = loja.entregas.find((e) => e.id === entregaId)
   const taxa = typeof entrega?.taxa === 'number' ? entrega.taxa : 0
@@ -52,7 +54,43 @@ export default function Sacola() {
       observacoes: observacoes.trim(),
     })
     registrarPedidoWhatsApp({ origem: 'sacola', unidade: unidade.id, valor: subtotal + taxa, itens: quantidadeTotal })
-    window.location.href = linkWhatsApp(unidade.whatsapp, mensagem)
+    const link = linkWhatsApp(unidade.whatsapp, mensagem)
+    // Mostra a confirmação (para quem voltar ao site) e abre o WhatsApp.
+    setEnviado(link)
+    window.scrollTo(0, 0)
+    window.location.href = link
+  }
+
+  // Depois do envio: confirmação, com opção de reabrir o WhatsApp ou começar outro pedido.
+  if (enviado) {
+    return (
+      <div className="mx-auto max-w-xl px-4 py-14 text-center">
+        <Seo titulo="Pedido enviado" />
+        <h1 className="text-4xl">Pedido enviado para o WhatsApp</h1>
+        <p className="mt-3 text-suave">
+          A mensagem com as peças já está pronta na conversa com a {unidade.nome}. Se ainda não enviou, toque em
+          enviar no WhatsApp: o atendimento confirma preço e disponibilidade por lá.
+        </p>
+        <div className="mt-8 grid gap-3">
+          <a href={enviado} className="flex items-center justify-center gap-2 rounded-md bg-[#1F7A45] py-3.5 font-semibold text-white hover:bg-[#186338]">
+            <IconeWhatsApp /> Abrir o WhatsApp de novo
+          </a>
+          <button
+            type="button"
+            onClick={() => {
+              esvaziar()
+              setEnviado(null)
+            }}
+            className="rounded-md bg-primaria py-3.5 font-semibold text-sobre-primaria hover:brightness-110"
+          >
+            Esvaziar a sacola e fazer outro pedido
+          </button>
+          <button type="button" onClick={() => setEnviado(null)} className="py-2 font-semibold text-primaria underline underline-offset-4">
+            Voltar à sacola
+          </button>
+        </div>
+      </div>
+    )
   }
 
   if (itens.length === 0) {
