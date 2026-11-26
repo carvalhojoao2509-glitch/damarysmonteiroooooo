@@ -16,16 +16,16 @@ export function Rodape() {
 
         <nav aria-label="Rodapé">
           <h2 className="mb-3 text-lg">Navegue</h2>
-          <ul className="space-y-2 opacity-90">
+          <ul className="opacity-90">
             {menu.map((m) => (
               <li key={m.para}>
-                <Link to={m.para} className="hover:underline">
+                <Link to={m.para} className="inline-flex min-h-11 items-center hover:underline">
                   {m.rotulo}
                 </Link>
               </li>
             ))}
             <li>
-              <Link to="/privacidade" className="hover:underline">
+              <Link to="/privacidade" className="inline-flex min-h-11 items-center hover:underline">
                 Privacidade
               </Link>
             </li>
@@ -39,17 +39,17 @@ export function Rodape() {
               <li key={u.id}>{u.nome}</li>
             ))}
           </ul>
-          <ul className="mt-4 space-y-2">
+          <ul className="mt-3">
             {loja.grupoWhatsApp && (
               <li>
-                <a href={loja.grupoWhatsApp.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
+                <a href={loja.grupoWhatsApp.url} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center underline underline-offset-4">
                   {loja.grupoWhatsApp.rotulo} no WhatsApp
                 </a>
               </li>
             )}
             {loja.redesSociais.map((r) => (
               <li key={r.url}>
-                <a href={r.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
+                <a href={r.url} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center underline underline-offset-4">
                   {r.nome}: {r.rotulo}
                 </a>
               </li>

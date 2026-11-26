@@ -100,7 +100,7 @@ export default function Sacola() {
         </p>
         <div className="mt-8 grid gap-3">
           {linkEnviado && (
-            <a href={linkEnviado} className="flex items-center justify-center gap-2 rounded-md bg-[#1F7A45] py-3.5 font-semibold text-white hover:bg-[#186338]">
+            <a href={linkEnviado} className="pressionavel flex items-center justify-center gap-2 rounded-md bg-[#1F7A45] py-3.5 font-semibold text-white hover:bg-[#186338]">
               <IconeWhatsApp /> Abrir o WhatsApp de novo
             </a>
           )}
@@ -128,7 +128,7 @@ export default function Sacola() {
         <Seo titulo="Sacola" />
         <h1 className="text-4xl">Sua sacola está vazia</h1>
         <p className="mt-3 text-suave">Escolha as peças no catálogo e envie o pedido pelo WhatsApp da loja.</p>
-        <Link to="/catalogo" className="mt-6 inline-flex rounded-md bg-primaria px-6 py-3 font-semibold text-sobre-primaria">
+        <Link to="/catalogo" className="pressionavel mt-6 inline-flex rounded-md bg-primaria px-6 py-3 font-semibold text-sobre-primaria">
           Ver o catálogo
         </Link>
       </div>
@@ -167,17 +167,17 @@ export default function Sacola() {
                   <p className="mt-1 text-sm">{formatarPreco(i.preco)} cada</p>
                   <div className="mt-auto flex items-center justify-between pt-2">
                     <div className="flex items-center rounded-md border border-texto/25 bg-white" role="group" aria-label={`Quantidade de ${i.nome}`}>
-                      <button type="button" className="p-2.5 disabled:opacity-30" onClick={() => alterarQuantidade(i.chave, i.quantidade - 1)} disabled={i.quantidade <= 1} aria-label="Diminuir">
+                      <button type="button" className="grid h-11 w-11 place-items-center disabled:opacity-30" onClick={() => alterarQuantidade(i.chave, i.quantidade - 1)} disabled={i.quantidade <= 1} aria-label="Diminuir">
                         <IconeMenos width={16} height={16} />
                       </button>
-                      <span className="min-w-8 text-center" aria-live="polite">{i.quantidade}</span>
-                      <button type="button" className="p-2.5 disabled:opacity-30" onClick={() => alterarQuantidade(i.chave, i.quantidade + 1)} disabled={i.quantidade >= QUANTIDADE_MAXIMA} aria-label="Aumentar">
+                      <span className="numeros min-w-6 text-center" aria-live="polite">{i.quantidade}</span>
+                      <button type="button" className="grid h-11 w-11 place-items-center disabled:opacity-30" onClick={() => alterarQuantidade(i.chave, i.quantidade + 1)} disabled={i.quantidade >= QUANTIDADE_MAXIMA} aria-label="Aumentar">
                         <IconeMais width={16} height={16} />
                       </button>
                     </div>
                     <div className="flex items-center gap-1">
-                      <span className="font-semibold">{formatarPreco(i.preco * i.quantidade)}</span>
-                      <button type="button" onClick={() => remover(i.chave)} className="p-2 text-suave hover:text-destaque" aria-label={`Remover ${i.nome}`}>
+                      <span className="numeros font-semibold">{formatarPreco(i.preco * i.quantidade)}</span>
+                      <button type="button" onClick={() => remover(i.chave)} className="-mr-2 grid h-11 w-11 place-items-center text-suave hover:text-destaque" aria-label={`Remover ${i.nome}`}>
                         <IconeLixeira width={18} height={18} />
                       </button>
                     </div>
@@ -186,7 +186,7 @@ export default function Sacola() {
               </li>
             ))}
           </ul>
-          <Link to="/catalogo" className="mt-4 inline-block font-semibold text-primaria underline underline-offset-4">
+          <Link to="/catalogo" className="mt-2 inline-flex min-h-11 items-center font-semibold text-primaria underline underline-offset-4">
             Continuar escolhendo
           </Link>
         </section>
@@ -223,7 +223,7 @@ export default function Sacola() {
               <legend className="mb-2 font-semibold">Pagamento</legend>
               <div className="grid grid-cols-2 gap-2">
                 {loja.pagamentos.map((p, idx) => (
-                  <label key={p.id} className="flex items-center gap-2 rounded-md border border-texto/25 px-3 py-2.5 text-sm has-[:checked]:border-primaria has-[:checked]:bg-primaria/5">
+                  <label key={p.id} className="pressionavel flex min-h-11 items-center gap-2 rounded-md border border-texto/25 px-3 py-2.5 text-sm has-[:checked]:border-primaria has-[:checked]:bg-primaria/5">
                     <input id={idx === 0 ? 'campo-pagamento' : undefined} type="radio" name="pagamento" value={p.id} checked={pagamento === p.id} onChange={() => setPagamento(p.id)} className="accent-[var(--cor-primaria)]" />
                     {p.nome}
                   </label>
@@ -236,7 +236,7 @@ export default function Sacola() {
               <legend className="mb-2 font-semibold">Entrega</legend>
               <div className="space-y-2">
                 {loja.entregas.map((e) => (
-                  <label key={e.id} className="flex items-start gap-2 rounded-md border border-texto/25 px-3 py-2.5 text-sm has-[:checked]:border-primaria has-[:checked]:bg-primaria/5">
+                  <label key={e.id} className="pressionavel flex min-h-11 items-start gap-2 rounded-md border border-texto/25 px-3 py-3 text-sm has-[:checked]:border-primaria has-[:checked]:bg-primaria/5">
                     <input type="radio" name="entrega" value={e.id} checked={entregaId === e.id} onChange={() => setEntregaId(e.id)} className="mt-0.5 accent-[var(--cor-primaria)]" />
                     <span>
                       {e.nome}
@@ -264,7 +264,7 @@ export default function Sacola() {
               <textarea id="campo-obs" rows={2} className="campo" value={observacoes} onChange={(e) => setObservacoes(e.target.value)} placeholder="Ex.: é para presente" />
             </div>
 
-            <dl className="space-y-1 border-t border-superficie pt-4">
+            <dl className="numeros space-y-1 border-t border-superficie pt-4">
               <div className="flex justify-between">
                 <dt>Subtotal ({quantidadeTotal} {quantidadeTotal === 1 ? 'peça' : 'peças'})</dt>
                 <dd>{formatarPreco(subtotal)}</dd>

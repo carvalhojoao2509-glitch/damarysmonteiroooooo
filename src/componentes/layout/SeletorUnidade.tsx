@@ -16,7 +16,7 @@ export function SeletorUnidade() {
   return (
     <>
       <div className="border-b border-superficie bg-fundo">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2 text-sm">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 text-sm">
           <span className="flex min-w-0 items-center gap-2">
             <IconeLoja width={18} height={18} className="shrink-0 text-primaria" />
             <span className="truncate">
@@ -32,7 +32,7 @@ export function SeletorUnidade() {
           <button
             type="button"
             onClick={() => setAberto(true)}
-            className="shrink-0 rounded px-2 py-1 font-semibold text-primaria underline underline-offset-4"
+            className="-mr-2 inline-flex min-h-11 shrink-0 items-center rounded px-2 font-semibold text-primaria underline underline-offset-4"
           >
             {escolhida ? 'Trocar loja' : 'Escolher'}
           </button>
@@ -48,7 +48,7 @@ export function SeletorUnidade() {
           {loja.unidades.map((u) => (
             <label
               key={u.id}
-              className="flex items-start gap-3 rounded-lg border border-superficie bg-white/60 p-3 has-[:checked]:border-primaria has-[:checked]:bg-white"
+              className="pressionavel flex items-start gap-3 rounded-lg border border-superficie bg-white/60 p-3 has-[:checked]:border-primaria has-[:checked]:bg-white"
             >
               <input
                 type="radio"

@@ -34,11 +34,12 @@ export function Dialogo({ aberto, aoFechar, titulo, children, estilo = 'base' }:
       onClose={aoFechar}
       onClick={(e) => e.target === ref.current && aoFechar()}
       aria-label={titulo}
+      data-estilo={estilo}
       className={`${posicao} bg-fundo p-0 text-texto shadow-xl`}
     >
       <div className="sticky top-0 z-10 flex items-center justify-between border-b border-superficie bg-fundo px-5 py-3">
         <h2 className="text-xl">{titulo}</h2>
-        <button type="button" onClick={aoFechar} className="-mr-2 rounded p-2" aria-label="Fechar">
+        <button type="button" onClick={aoFechar} className="-mr-3 grid h-11 w-11 place-items-center rounded" aria-label="Fechar">
           <IconeFechar />
         </button>
       </div>

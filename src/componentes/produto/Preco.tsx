@@ -9,7 +9,7 @@ export function Preco({ produto, grande = false }: { produto: Produto; grande?: 
   const vezes = parc ? parcelasPossiveis(final, parc.vezes, parc.valorMinimoParcela) : 1
 
   return (
-    <div>
+    <div className="numeros">
       <p className="flex flex-wrap items-baseline gap-x-2">
         {promo && (
           <s className={`text-suave ${grande ? 'text-base' : 'text-sm'}`}>

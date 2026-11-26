@@ -66,7 +66,7 @@ export default function Catalogo() {
   const ativos = contarFiltrosAtivos(filtros)
 
   const chip = (ativo: boolean) =>
-    `rounded-full border px-3.5 py-1.5 text-sm ${ativo ? 'border-primaria bg-primaria text-sobre-primaria' : 'border-texto/25 bg-white'}`
+    `inline-flex min-h-11 items-center rounded-full border px-4 text-sm ${ativo ? 'border-primaria bg-primaria text-sobre-primaria' : 'border-texto/25 bg-white'}`
 
   const painel = (
     <div className="space-y-7">
@@ -123,13 +123,13 @@ export default function Catalogo() {
         </div>
       </fieldset>
 
-      <fieldset className="space-y-3">
+      <fieldset className="space-y-1">
         <legend className="mb-2 font-semibold">Mais filtros</legend>
-        <label className="flex items-center gap-3">
+        <label className="flex min-h-11 items-center gap-3">
           <input type="checkbox" className="h-5 w-5 accent-[var(--cor-primaria)]" checked={filtros.promocao} onChange={(e) => atualizar({ promocao: e.target.checked })} />
           Só promoções
         </label>
-        <label className="flex items-center gap-3">
+        <label className="flex min-h-11 items-center gap-3">
           <input type="checkbox" className="h-5 w-5 accent-[var(--cor-primaria)]" checked={filtros.tag === 'plus size'} onChange={(e) => atualizar({ tag: e.target.checked ? 'plus size' : '' })} />
           Só plus size
         </label>
@@ -147,7 +147,7 @@ export default function Catalogo() {
       </fieldset>
 
       {ativos > 0 && (
-        <button type="button" onClick={limpar} className="font-semibold text-primaria underline underline-offset-4">
+        <button type="button" onClick={limpar} className="inline-flex min-h-11 items-center font-semibold text-primaria underline underline-offset-4">
           Limpar filtros
         </button>
       )}
@@ -179,7 +179,7 @@ export default function Catalogo() {
       </form>
 
       <div className="mt-4 flex items-center justify-between gap-3">
-        <button type="button" onClick={() => setPainelAberto(true)} className="flex items-center gap-2 rounded-md border border-texto/25 bg-white px-4 py-2.5 font-semibold lg:hidden">
+        <button type="button" onClick={() => setPainelAberto(true)} className="flex min-h-11 items-center gap-2 rounded-md border border-texto/25 bg-white px-4 py-2.5 font-semibold lg:hidden">
           <IconeFiltro width={18} height={18} /> Filtrar{ativos > 0 && ` (${ativos})`}
         </button>
         <p className="hidden text-sm text-suave lg:block" aria-live="polite">
@@ -187,7 +187,7 @@ export default function Catalogo() {
         </p>
         <label className="flex items-center gap-2 text-sm">
           <span className="text-suave">Ordenar</span>
-          <select className="campo w-auto py-2" value={filtros.ordem} onChange={(e) => atualizar({ ordem: e.target.value as Ordem })}>
+          <select className="campo w-auto" value={filtros.ordem} onChange={(e) => atualizar({ ordem: e.target.value as Ordem })}>
             {opcoesOrdem.map((o) => (
               <option key={o.valor} value={o.valor}>{o.rotulo}</option>
             ))}

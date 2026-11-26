@@ -20,9 +20,30 @@
 }
 
 @layer base {
+  :root {
+    /* Curvas de animação (fortes, para a interface "responder" ao toque) */
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+    /* Site claro: impede o modo escuro do celular de escurecer campos e seletores */
+    color-scheme: light;
+    accent-color: var(--cor-primaria);
+    caret-color: var(--cor-primaria);
+  }
   html {
     -webkit-text-size-adjust: 100%;
     scroll-behavior: smooth;
+    /* Sem o atraso de toque duplo nos botões */
+    touch-action: manipulation;
+  }
+  /* No celular o topo fica fixo: o foco do teclado e os links internos não ficam escondidos atrás dele */
+  @media (max-width: 767px) {
+    html {
+      scroll-padding-top: 5rem;
+    }
+  }
+  ::selection {
+    background: var(--cor-primaria);
+    color: var(--cor-texto-sobre-primaria);
   }
   body {
     background: var(--cor-fundo);
@@ -46,8 +67,18 @@
   }
   button,
   [role='button'],
-  label[for] {
+  label[for],
+  label:has(> input) {
     cursor: pointer;
+  }
+  /* Resposta imediata ao toque: o botão "afunda" de leve (não mexe no layout) */
+  button,
+  .pressionavel {
+    transition: transform 160ms var(--ease-out);
+  }
+  button:not(:disabled):active,
+  .pressionavel:active {
+    transform: scale(0.97);
   }
   @media (prefers-reduced-motion: reduce) {
     html {
@@ -84,6 +115,11 @@
     padding: 0.7rem 0.85rem;
     font-size: 1rem;
   }
+  /* Texto de exemplo legível (contraste acima de 4,5:1) */
+  .campo::placeholder {
+    color: var(--cor-texto-suave);
+    opacity: 1;
+  }
   .campo:focus-visible {
     outline: 2px solid var(--cor-primaria);
     outline-offset: 0;
@@ -98,6 +134,88 @@
   }
 }
 
+/* Preços e totais com algarismos alinhados */
+.numeros {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Janelas (menu, filtros, escolha da loja): sobem do rodapé no celular e entram
+   pela lateral no menu. Abrem e fecham com a curva de gaveta do iOS. */
+dialog {
+  opacity: 1;
+  transform: none;
+  transition:
+    transform 340ms var(--ease-drawer),
+    opacity 340ms var(--ease-drawer),
+    overlay 340ms allow-discrete,
+    display 340ms allow-discrete;
+}
+dialog:not([open]) {
+  transform: translateY(100%);
+}
+dialog[data-estilo='lateral']:not([open]) {
+  transform: translateX(100%);
+}
+@starting-style {
+  dialog[open] {
+    transform: translateY(100%);
+  }
+  dialog[data-estilo='lateral'][open] {
+    transform: translateX(100%);
+  }
+}
+/* No computador a janela base fica no centro: só um leve deslize e fade */
+@media (min-width: 640px) {
+  dialog[data-estilo='base']:not([open]) {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+  @starting-style {
+    dialog[data-estilo='base'][open] {
+      transform: translateY(12px);
+      opacity: 0;
+    }
+  }
+}
 dialog::backdrop {
   background: rgb(20 8 12 / 0.55);
+  opacity: 1;
+  transition:
+    opacity 340ms var(--ease-drawer),
+    overlay 340ms allow-discrete,
+    display 340ms allow-discrete;
+}
+dialog:not([open])::backdrop {
+  opacity: 0;
+}
+@starting-style {
+  dialog[open]::backdrop {
+    opacity: 0;
+  }
+}
+
+/* Avisos que aparecem depois de uma ação ("Adicionado à sacola") */
+.aparecer {
+  transition:
+    opacity 280ms var(--ease-out),
+    transform 280ms var(--ease-out);
+}
+@starting-style {
+  .aparecer {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+/* Número da sacola: um leve "pulo" quando muda, para mostrar que a peça entrou */
+.contador {
+  transition:
+    transform 260ms var(--ease-out),
+    opacity 260ms var(--ease-out);
+}
+@starting-style {
+  .contador {
+    transform: scale(0.6);
+    opacity: 0;
+  }
 }

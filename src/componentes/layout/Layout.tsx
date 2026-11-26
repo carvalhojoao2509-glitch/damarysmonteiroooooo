@@ -4,6 +4,7 @@ import { iniciarMetricas, registrarPagina } from '../../servicos/metricas.ts'
 import { BotaoWhatsAppFlutuante } from './BotaoWhatsAppFlutuante.tsx'
 import { Cabecalho } from './Cabecalho.tsx'
 import { Rodape } from './Rodape.tsx'
+import { SeletorUnidade } from './SeletorUnidade.tsx'
 
 export function Layout() {
   const { pathname, search } = useLocation()
@@ -21,6 +22,7 @@ export function Layout() {
   return (
     <div className="flex min-h-dvh flex-col">
       <Cabecalho />
+      <SeletorUnidade />
       <main id="conteudo" className="flex-1">
         <Outlet />
       </main>

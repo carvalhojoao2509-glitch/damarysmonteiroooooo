@@ -7,7 +7,6 @@ import { loja } from '../../config/loja.config.ts'
 import { useSacola } from '../../contextos/SacolaContext.tsx'
 import { Dialogo } from '../ui/Dialogo.tsx'
 import { IconeCoroa, IconeInstagram, IconeMenu, IconeSacola } from '../ui/Icones.tsx'
-import { SeletorUnidade } from './SeletorUnidade.tsx'
 
 export const menu = [
   { rotulo: 'Novidades', para: '/catalogo?tag=novidade' },
@@ -23,7 +22,8 @@ export function Cabecalho() {
   const instagram = loja.redesSociais.find((r) => r.nome === 'Instagram')
 
   return (
-    <header>
+    // No celular o topo (com a sacola) fica fixo ao rolar; no computador ele rola com a página.
+    <header className="sticky top-0 z-30 md:static">
       <a href="#conteudo" className="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-50 focus:rounded focus:bg-white focus:px-3 focus:py-2">
         Pular para o conteúdo
       </a>
@@ -33,7 +33,7 @@ export function Cabecalho() {
             <button
               type="button"
               onClick={() => setMenuAberto(true)}
-              className="rounded p-2 md:hidden"
+              className="grid h-11 w-11 place-items-center rounded md:hidden"
               aria-label="Abrir menu"
             >
               <IconeMenu />
@@ -67,12 +67,15 @@ export function Cabecalho() {
           <div className="flex justify-end">
             <Link
               to="/sacola"
-              className="relative rounded p-2"
+              className="relative grid h-11 w-11 place-items-center rounded"
               aria-label={`Sacola, ${quantidadeTotal} ${quantidadeTotal === 1 ? 'item' : 'itens'}`}
             >
               <IconeSacola width={26} height={26} />
               {quantidadeTotal > 0 && (
-                <span className="absolute right-0 top-0 grid h-5 min-w-5 place-items-center rounded-full bg-fundo px-1 text-xs font-bold text-primaria">
+                <span
+                  key={quantidadeTotal}
+                  className="contador absolute -right-0.5 top-0 grid h-5 min-w-5 place-items-center rounded-full bg-fundo px-1 text-xs font-bold text-primaria"
+                >
                   {quantidadeTotal}
                 </span>
               )}
@@ -93,14 +96,12 @@ export function Cabecalho() {
         </nav>
       </div>
 
-      <SeletorUnidade />
-
       <Dialogo aberto={menuAberto} aoFechar={() => setMenuAberto(false)} titulo="Menu" estilo="lateral">
         <nav aria-label="Menu do celular">
           <ul className="divide-y divide-superficie">
             {[...menu, { rotulo: 'Sacola', para: '/sacola' }].map((m) => (
               <li key={m.para}>
-                <Link to={m.para} onClick={() => setMenuAberto(false)} className="block py-3.5 text-lg">
+                <Link to={m.para} onClick={() => setMenuAberto(false)} className="flex min-h-12 items-center text-lg">
                   {m.rotulo}
                 </Link>
               </li>

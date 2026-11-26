@@ -10,7 +10,7 @@ import { emPromocao, formatarPreco, precoFinal } from '../utils/preco.ts'
 import type { Produto } from '../tipos/index.ts'
 
 const botaoPrimario =
-  'inline-flex items-center justify-center rounded-md bg-primaria px-6 py-3 font-semibold text-sobre-primaria hover:brightness-110'
+  'pressionavel inline-flex items-center justify-center rounded-md bg-primaria px-6 py-3 font-semibold text-sobre-primaria hover:brightness-110'
 
 function Secao({ titulo, link, rotuloLink, children }: { titulo: string; link?: string; rotuloLink?: string; children: ReactNode }) {
   return (
@@ -18,7 +18,7 @@ function Secao({ titulo, link, rotuloLink, children }: { titulo: string; link?: 
       <div className="mb-5 flex items-end justify-between gap-4">
         <h2 className="text-[1.75rem] md:text-4xl">{titulo}</h2>
         {link && (
-          <Link to={link} className="shrink-0 pb-1 text-sm font-semibold text-primaria underline underline-offset-4">
+          <Link to={link} className="-mb-2 inline-flex min-h-11 shrink-0 items-center text-sm font-semibold text-primaria underline underline-offset-4">
             {rotuloLink ?? 'Ver todos'}
           </Link>
         )}
@@ -105,7 +105,7 @@ export default function Home() {
             </div>
             <Link
               to={loja.plusSize.link}
-              className="inline-flex shrink-0 items-center justify-center self-start rounded-md bg-fundo px-6 py-3 font-semibold text-primaria md:self-auto"
+              className="pressionavel inline-flex shrink-0 items-center justify-center self-start rounded-md bg-fundo px-6 py-3 font-semibold text-primaria md:self-auto"
             >
               Ver peças plus size
             </Link>
@@ -162,7 +162,7 @@ export default function Home() {
               href={loja.grupoWhatsApp.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex shrink-0 items-center justify-center gap-2 self-start rounded-md bg-[#1F7A45] px-6 py-3 font-semibold text-white hover:bg-[#186338] md:self-auto"
+              className="pressionavel inline-flex shrink-0 items-center justify-center gap-2 self-start rounded-md bg-[#1F7A45] px-6 py-3 font-semibold text-white hover:bg-[#186338] md:self-auto"
             >
               <IconeWhatsApp width={20} height={20} /> Entrar no {loja.grupoWhatsApp.rotulo}
             </a>
@@ -189,7 +189,7 @@ export default function Home() {
                 {t}
               </p>
             ))}
-            <Link to="/lojas" className="mt-6 inline-block font-semibold text-primaria underline underline-offset-4">
+            <Link to="/lojas" className="mt-4 inline-flex min-h-11 items-center font-semibold text-primaria underline underline-offset-4">
               Conheça nossas {loja.unidades.length} lojas
             </Link>
           </div>

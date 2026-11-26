@@ -18,7 +18,7 @@ export function BotaoWhatsAppFlutuante() {
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => registrarPedidoWhatsApp({ origem: 'duvida', unidade: unidade.id, valor: 0, itens: 0 })}
-      className="fixed bottom-4 right-4 z-40 flex items-center gap-2 rounded-full bg-[#1F7A45] py-3 pl-3 pr-4 text-white shadow-lg ring-1 ring-black/10 hover:bg-[#186338]"
+      className="pressionavel fixed bottom-4 right-4 z-40 flex items-center gap-2 rounded-full bg-[#1F7A45] py-3 pl-3 pr-4 text-white shadow-lg ring-1 ring-black/10 hover:bg-[#186338]"
     >
       <IconeWhatsApp width={26} height={26} />
       <span className="text-sm font-semibold">Dúvidas?</span>

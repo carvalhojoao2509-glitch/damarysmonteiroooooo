@@ -48,16 +48,16 @@ export default function NossasLojas() {
               <ul>{u.horarios.map((h) => <li key={h}>{h}</li>)}</ul>
             </div>
             <div className="mt-auto grid gap-2 pt-5">
-              <a href={linkWhatsApp(u.whatsapp, mensagemDuvida())} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 rounded-md bg-[#1F7A45] py-2.5 font-semibold text-white">
+              <a href={linkWhatsApp(u.whatsapp, mensagemDuvida())} target="_blank" rel="noopener noreferrer" className="pressionavel flex min-h-11 items-center justify-center gap-2 rounded-md bg-[#1F7A45] py-2.5 font-semibold text-white">
                 <IconeWhatsApp width={20} height={20} /> WhatsApp
               </a>
-              <a href={u.linkMapa} target="_blank" rel="noopener noreferrer" className="rounded-md border border-texto/25 py-2.5 text-center font-semibold">
+              <a href={u.linkMapa} target="_blank" rel="noopener noreferrer" className="pressionavel flex min-h-11 items-center justify-center rounded-md border border-texto/25 py-2.5 font-semibold">
                 Abrir no Google Maps
               </a>
               {u.id === unidade.id ? (
-                <p className="py-1 text-center text-sm text-disponivel">Esta é a loja escolhida</p>
+                <p className="flex min-h-11 items-center justify-center text-sm text-disponivel">Esta é a loja escolhida</p>
               ) : (
-                <button type="button" onClick={() => escolher(u.id)} className="py-1 text-sm font-semibold text-primaria underline underline-offset-4">
+                <button type="button" onClick={() => escolher(u.id)} className="min-h-11 text-sm font-semibold text-primaria underline underline-offset-4">
                   Comprar nesta loja
                 </button>
               )}

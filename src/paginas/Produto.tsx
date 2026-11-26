@@ -149,7 +149,7 @@ export default function Produto() {
                 {produto.tamanhos.map((t) => {
                   const semEstoque = statusNaUnidade(produto, unidade.id, t) === 'indisponivel'
                   return (
-                    <label key={t} className={`relative grid h-11 min-w-11 place-items-center rounded-md border px-3 has-[:checked]:border-primaria has-[:checked]:bg-primaria has-[:checked]:text-sobre-primaria has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-primaria ${semEstoque ? 'border-texto/15 bg-white text-suave line-through' : 'border-texto/30 bg-white'}`}>
+                    <label key={t} className={`pressionavel relative grid h-11 min-w-11 place-items-center rounded-md border px-3 has-[:checked]:border-primaria has-[:checked]:bg-primaria has-[:checked]:text-sobre-primaria has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-primaria ${semEstoque ? 'border-texto/15 bg-white text-suave line-through' : 'border-texto/30 bg-white'}`}>
                       <input type="radio" name="tamanho" value={t} checked={tamanho === t} onChange={() => setTamanho(t)} className="sr-only" />
                       {t}
                       {semEstoque && <span className="sr-only"> (sem estoque nesta loja)</span>}
@@ -167,7 +167,7 @@ export default function Produto() {
               </legend>
               <div className="flex flex-wrap gap-2">
                 {produto.cores.map((c) => (
-                  <label key={c} className="flex h-11 items-center gap-2 rounded-md border border-texto/30 bg-white px-3 has-[:checked]:border-primaria has-[:checked]:ring-1 has-[:checked]:ring-primaria has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-primaria">
+                  <label key={c} className="pressionavel flex h-11 items-center gap-2 rounded-md border border-texto/30 bg-white px-3 has-[:checked]:border-primaria has-[:checked]:ring-1 has-[:checked]:ring-primaria has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-primaria">
                     <input type="radio" name="cor" value={c} checked={cor === c} onChange={() => setCor(c)} className="sr-only" />
                     {loja.coresProdutos[c] && <span className="h-4 w-4 rounded-full ring-1 ring-black/20" style={{ background: loja.coresProdutos[c] }} aria-hidden />}
                     {c}
@@ -204,14 +204,14 @@ export default function Produto() {
                 }
                 registrarPedidoWhatsApp({ origem: 'produto', unidade: unidade.id, valor: item.preco, itens: 1 })
               }}
-              className="flex items-center justify-center gap-2 rounded-md border-2 border-[#1F7A45] py-3 font-semibold text-[#1F7A45] hover:bg-[#1F7A45]/5"
+              className="pressionavel flex items-center justify-center gap-2 rounded-md border-2 border-[#1F7A45] py-3 font-semibold text-[#1F7A45] hover:bg-[#1F7A45]/5"
             >
               <IconeWhatsApp /> Comprar pelo WhatsApp
             </a>
           </div>
 
           {adicionado && (
-            <p role="status" className="mt-4 rounded-md bg-disponivel/10 p-3 text-disponivel">
+            <p role="status" className="aparecer mt-4 rounded-md bg-disponivel/10 p-3 text-disponivel">
               Adicionado à sacola.{' '}
               <Link to="/sacola" className="font-semibold underline underline-offset-4">
                 Ver sacola
