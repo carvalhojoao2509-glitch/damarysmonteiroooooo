@@ -5,7 +5,7 @@ WhatsApp da loja escolhida com a mensagem do pedido pronta. Não há pagamento o
 fechamento acontece na conversa.
 
 Site 100% estático (Vite + React + TypeScript + Tailwind CSS), sem backend e sem banco de dados.
-Pode ser hospedado de graça na Vercel ou na Netlify.
+Pode ser hospedado de graça na Netlify (plano Free, permite uso comercial).
 
 Esta cópia está configurada como **demonstração para a Dâmarys Monteiro** (3 lojas em Vitória/ES).
 O catálogo de exemplo tem 5 peças com fotos; preços, tamanhos, estoque, endereços e telefones são de exemplo
@@ -93,23 +93,32 @@ Se a planilha falhar, o site usa a última cópia salva no navegador e depois o 
 
 ## Publicar
 
+> **Qual hospedagem usar:** para sites de clientes, use a **Netlify (plano Free)**, que permite uso
+> comercial. O plano gratuito da Vercel (Hobby) é só para uso pessoal e não comercial; na Vercel,
+> um cliente exige o plano Pro (US$ 20 por usuário/mês). Confira os termos atuais antes de contratar.
+>
+> O endereço do site é descoberto sozinho no build (variáveis `URL` da Netlify ou
+> `VERCEL_PROJECT_PRODUCTION_URL` da Vercel; veja `scripts/url-do-site.ts`). Para forçar outro,
+> crie a variável `URL_SITE` nas configurações da hospedagem.
+
+### Netlify (recomendado)
+1. Em https://app.netlify.com, **Add new project > Import an existing project > GitHub** e escolha o repositório.
+2. O `netlify.toml` já define o build (`npm run build`, pasta `dist`, Node 22) e as rotas. Clique em **Deploy**.
+3. Em **Project configuration > Change project name**, escolha o nome (vira `nome.netlify.app`).
+
 ### Vercel
 1. Suba o projeto para um repositório no GitHub.
 2. Em https://vercel.com, **Add New > Project**, importe o repositório.
 3. A Vercel detecta o Vite. Confira: Build Command `npm run build`, Output Directory `dist`. **Deploy**.
 4. O arquivo `vercel.json` já cuida das rotas (abrir `/produto/...` direto) e do cache.
 
-### Netlify
-1. Em https://app.netlify.com, **Add new site > Import an existing project**, escolha o repositório.
-2. O `netlify.toml` já define o build (`npm run build`, pasta `dist`) e as rotas. **Deploy**.
-
 ### Domínio próprio (ex.: damarysmonteiro.com.br)
 1. Registre o domínio (para `.com.br`: https://registro.br).
 2. Na Vercel: **Project > Settings > Domains > Add**. Na Netlify: **Domain management > Add a domain**.
 3. A plataforma mostra os registros de DNS (tipo A ou CNAME) para cadastrar no registro.br,
    ou os servidores de DNS deles para usar no lugar. O HTTPS é ativado sozinho.
-4. Atualize `urlSite` no `loja.config.ts` com o domínio final e publique de novo
-   (as prévias de compartilhamento e o sitemap usam esse endereço).
+4. Publique de novo: o build passa a usar o domínio principal da hospedagem nas prévias de
+   compartilhamento e no sitemap. Atualize também `urlSite` no `loja.config.ts` (é o endereço de reserva).
 5. Envie `https://seudominio/sitemap.xml` no [Google Search Console](https://search.google.com/search-console).
 
 ### Atualizar sem deploy x com deploy

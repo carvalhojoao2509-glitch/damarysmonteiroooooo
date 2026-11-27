@@ -23,7 +23,9 @@ export function linkWhatsApp(numero: string, mensagem?: string): string {
 
 /** Endereço da página do produto (o WhatsApp mostra a foto na prévia do link). */
 export function urlProduto(produtoId: string): string {
-  return `${loja.urlSite.replace(/\/$/, '')}/produto/${produtoId}`
+  // No navegador usa o próprio endereço aberto (funciona em qualquer domínio/hospedagem).
+  const base = typeof window !== 'undefined' ? window.location.origin : loja.urlSite
+  return `${base.replace(/\/$/, '')}/produto/${produtoId}`
 }
 
 /**

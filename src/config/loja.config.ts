@@ -17,6 +17,8 @@ export const loja: ConfigLoja = {
     'Conjuntos, camisas, alfaiataria e peças de festa, do slim ao plus size. Escolha no catálogo e finalize seu pedido pelo WhatsApp com uma das nossas 3 lojas em Vitória.',
 
   // Troque pelo domínio do cliente depois de publicar (sem barra no fim).
+  // Endereço de reserva. Na Netlify/Vercel o build descobre o endereço de produção sozinho
+  // (scripts/url-do-site.ts); para forçar outro, defina a variável URL_SITE na hospedagem.
   urlSite: 'https://damarys-monteiro-demo.vercel.app',
 
   // Vazio = o nome da loja aparece escrito com a fonte de título (como o letreiro).

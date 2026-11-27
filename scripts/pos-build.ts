@@ -16,9 +16,10 @@ import dados from '../src/data/produtos.json' with { type: 'json' }
 import { lerCsvProdutos, lerJsonProdutos, type ProdutoBruto } from '../src/servicos/csv.ts'
 import type { Produto } from '../src/tipos/index.ts'
 import { slug } from '../src/utils/texto.ts'
+import { urlDoSite } from './url-do-site.ts'
 
 const DIST = 'dist'
-const url = loja.urlSite.replace(/\/$/, '')
+const url = urlDoSite()
 
 const esc = (s: string) =>
   s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;')

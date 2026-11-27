@@ -2,6 +2,7 @@ import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { loja } from './src/config/loja.config.ts'
+import { urlDoSite } from './scripts/url-do-site.ts'
 
 /** Escapa texto para ser colocado com segurança dentro do HTML. */
 const esc = (s: string) =>
@@ -20,7 +21,8 @@ function configDaLoja(): Plugin {
       const c = loja.cores
       const variaveis = `:root{--cor-primaria:${c.primaria};--cor-texto-sobre-primaria:${c.textoSobrePrimaria};--cor-secundaria:${c.secundaria};--cor-fundo:${c.fundo};--cor-superficie:${c.superficie};--cor-texto:${c.texto};--cor-texto-suave:${c.textoSuave};--cor-destaque:${c.destaque};--cor-disponivel:${c.disponivel};--fonte-titulo:${loja.fontes.titulo};--fonte-texto:${loja.fontes.texto};}`
       const titulo = `${loja.nome} | ${loja.slogan}`
-      const imagem = loja.urlSite + loja.imagemCompartilhamento
+      const url = urlDoSite()
+      const imagem = url + loja.imagemCompartilhamento
       return html
         .replace('<!--TITULO-->', esc(titulo))
         .replace(
@@ -29,13 +31,13 @@ function configDaLoja(): Plugin {
             `<meta name="description" content="${esc(loja.descricao)}" />`,
             `<meta name="theme-color" content="${c.primaria}" />`,
             `<link rel="icon" href="${loja.favicon}" />`,
-            `<link rel="canonical" href="${loja.urlSite}/" />`,
+            `<link rel="canonical" href="${url}/" />`,
             `<meta property="og:type" content="website" />`,
             `<meta property="og:locale" content="pt_BR" />`,
             `<meta property="og:site_name" content="${esc(loja.nome)}" />`,
             `<meta property="og:title" content="${esc(titulo)}" />`,
             `<meta property="og:description" content="${esc(loja.descricao)}" />`,
-            `<meta property="og:url" content="${loja.urlSite}/" />`,
+            `<meta property="og:url" content="${url}/" />`,
             `<meta property="og:image" content="${imagem}" />`,
             `<meta property="og:image:width" content="1200" />`,
             `<meta property="og:image:height" content="630" />`,
