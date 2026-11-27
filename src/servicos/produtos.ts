@@ -2,9 +2,11 @@
 //
 // Fonte "planilha":
 //   1. Se o navegador baixou a planilha há menos de `cacheMinutos`, usa essa cópia.
-//   2. Senão, baixa a planilha de novo.
-//   3. Se o download falhar, usa a última cópia salva (mesmo antiga).
-//   4. Sem cópia nenhuma, usa o src/data/produtos.json (reserva).
+//   2. Senão, baixa a planilha pelo intermediário do próprio site (/api/planilha,
+//      função da Netlify), que evita o bloqueio de CORS dos navegadores.
+//   3. Se o intermediário não existir (outra hospedagem, teste local), baixa direto do Google.
+//   4. Se tudo falhar, usa a última cópia salva (mesmo antiga) e, sem ela,
+//      o src/data/produtos.json (reserva, refeito a cada publicação).
 // Fonte "json": usa direto o src/data/produtos.json.
 
 import { loja } from '../config/loja.config.ts'
@@ -68,7 +70,13 @@ export async function carregarProdutos(): Promise<{ produtos: Produto[]; origem:
   }
 
   try {
-    const csv = await baixarPlanilha(urlPlanilha)
+    let csv: string
+    try {
+      csv = await baixarPlanilha('/api/planilha')
+    } catch (erroIntermediario) {
+      console.warn('[catálogo] Intermediário indisponível, tentando o Google direto:', erroIntermediario)
+      csv = await baixarPlanilha(urlPlanilha)
+    }
     const produtos = lerCsvProdutos(csv)
     if (!produtos.length) throw new Error('Nenhum produto válido na planilha')
     gravar(CHAVE_CACHE, { salvoEm: Date.now(), url: urlPlanilha, csv } satisfies CachePlanilha)

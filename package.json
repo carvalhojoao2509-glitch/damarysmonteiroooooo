@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && tsx scripts/pos-build.ts",
+    "build": "tsx scripts/sincronizar-reserva.ts && tsc -b && vite build && tsx scripts/pos-build.ts",
     "preview": "vite preview",
     "imagens": "tsx scripts/otimizar-imagens.ts",
     "planilha:json": "tsx scripts/planilha-para-json.ts"

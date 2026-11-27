@@ -5,6 +5,14 @@
 [build.environment]
   NODE_VERSION = "22"
 
+# A planilha de produtos passa pela função "planilha" (mesmo endereço do site,
+# sem bloqueio do navegador). Precisa vir ANTES da regra geral: vale a primeira que combinar.
+[[redirects]]
+  from = "/api/planilha"
+  to = "/.netlify/functions/planilha"
+  status = 200
+  force = true
+
 # Arquivos gerados no build (páginas de produto com prévia própria) têm prioridade;
 # qualquer outro endereço abre o site, que cuida da rota.
 [[redirects]]

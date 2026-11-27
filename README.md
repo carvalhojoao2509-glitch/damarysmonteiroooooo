@@ -89,6 +89,28 @@ Resumo:
 
 Se a planilha falhar, o site usa a última cópia salva no navegador e depois o `produtos.json`.
 
+### Autonomia da loja: como a planilha chega ao site sem ninguém publicar nada
+
+| Etapa | Quem faz | Tempo |
+|---|---|---|
+| A loja edita a planilha | Loja | na hora |
+| O Google atualiza o CSV publicado | Google | alguns minutos |
+| A função `netlify/functions/planilha.mts` busca o CSV (rota `/api/planilha`) | Netlify | guarda 1 minuto na CDN |
+| O navegador da cliente lê pelo próprio endereço do site (sem bloqueio de CORS) | Site | guarda 2 minutos (`cacheMinutos`) |
+| Uma vez por dia o site é republicado (`netlify/functions/atualizar-diariamente.mts`) | Netlify | 3h (Brasília) |
+
+A republicação diária refaz a reserva (`src/data/produtos.json`, via `scripts/sincronizar-reserva.ts`)
+e gera a prévia de compartilhamento das peças novas. Para ela funcionar, **uma única vez** na Netlify:
+1. **Project configuration > Build & deploy > Continuous deployment > Build hooks > Add build hook**
+   (nome: "Atualização diária", branch `main`) e copie o endereço gerado.
+2. **Project configuration > Environment variables > Add a variable**: `BUILD_HOOK_URL` = o endereço copiado.
+
+Opcional: a variável `PLANILHA_URL` troca o link da planilha sem mexer no código (vale para a função e
+para o build; o link em `loja.config.ts` continua sendo o padrão).
+
+Diagnóstico: abra o site com `?diagnostico` no fim do endereço; o rodapé mostra se os produtos vieram
+da planilha, da cópia salva ou da reserva.
+
 ---
 
 ## Publicar

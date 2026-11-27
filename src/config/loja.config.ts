@@ -156,7 +156,7 @@ export const loja: ConfigLoja = {
     // 'planilha' = lê a planilha do Google publicada como CSV (muda sem deploy).
     fonte: 'json',
     urlPlanilha: '',
-    cacheMinutos: 5,
+    cacheMinutos: 2,
   },
 
   metricas: {
