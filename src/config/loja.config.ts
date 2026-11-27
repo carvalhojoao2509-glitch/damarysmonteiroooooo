@@ -19,7 +19,7 @@ export const loja: ConfigLoja = {
   // Troque pelo domínio do cliente depois de publicar (sem barra no fim).
   // Endereço de reserva. Na Netlify/Vercel o build descobre o endereço de produção sozinho
   // (scripts/url-do-site.ts); para forçar outro, defina a variável URL_SITE na hospedagem.
-  urlSite: 'https://damarys-monteiro-demo.vercel.app',
+  urlSite: 'https://damarysmonteiro.netlify.app',
 
   // Vazio = o nome da loja aparece escrito com a fonte de título (como o letreiro).
   logo: '',
