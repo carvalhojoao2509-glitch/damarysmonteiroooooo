@@ -84,6 +84,19 @@ export function lerEstoque(v: unknown): Estoque {
   return { tipo: 'consultar' }
 }
 
+/**
+ * Data no formato AAAA-MM-DD. O Google Planilhas em português costuma mostrar
+ * (e publicar) as datas como DD/MM/AAAA; as duas formas são aceitas.
+ */
+export function lerData(v: unknown): string {
+  const s = texto(v)
+  const br = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/)
+  if (br) return `${br[3]}-${br[2].padStart(2, '0')}-${br[1].padStart(2, '0')}`
+  const iso = s.match(/^(\d{4})-(\d{1,2})-(\d{1,2})/)
+  if (iso) return `${iso[1]}-${iso[2].padStart(2, '0')}-${iso[3].padStart(2, '0')}`
+  return s
+}
+
 /** Converte um produto "solto" em Produto. Retorna null se faltar o essencial. */
 export function montarProduto(b: ProdutoBruto): Produto | null {
   const id = texto(b.id)
@@ -110,7 +123,7 @@ export function montarProduto(b: ProdutoBruto): Produto | null {
     tags: lerLista(b.tags).map((t) => normalizar(t)),
     publico: texto(b.publico),
     ativo: lerSimNao(b.ativo),
-    dataCadastro: texto(b.dataCadastro),
+    dataCadastro: lerData(b.dataCadastro),
     estoque,
   }
 }

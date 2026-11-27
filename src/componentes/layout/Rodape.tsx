@@ -1,9 +1,22 @@
-import { Link } from 'react-router'
+import { Link, useLocation } from 'react-router'
+import { useProdutos } from '../../contextos/ProdutosContext.tsx'
+import type { OrigemProdutos } from '../../servicos/produtos.ts'
 import { loja } from '../../config/loja.config.ts'
 import { IconeCoroa } from '../ui/Icones.tsx'
 import { menu } from './Cabecalho.tsx'
 
+/** Texto do modo diagnóstico (abrir o site com ?diagnostico no fim do endereço). */
+const nomeOrigem: Record<OrigemProdutos, string> = {
+  planilha: 'planilha do Google, baixada agora',
+  'planilha-cache': 'planilha do Google, cópia salva há menos de 5 minutos',
+  'reserva-json': 'RESERVA (produtos.json): a planilha não pôde ser lida',
+  json: 'arquivo produtos.json (a planilha não está ligada)',
+}
+
 export function Rodape() {
+  const { search } = useLocation()
+  const { origem, produtos } = useProdutos()
+  const diagnostico = new URLSearchParams(search).has('diagnostico')
   return (
     <footer className="letreiro mt-16 pb-24">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
@@ -74,6 +87,11 @@ export function Rodape() {
       <p className="mx-auto max-w-6xl px-4 text-sm opacity-70">
         Preços e estoque sujeitos a confirmação pelo atendimento. Este site não guarda seus dados pessoais.
       </p>
+      {diagnostico && (
+        <p role="status" className="mx-auto mt-4 max-w-6xl px-4 text-sm">
+          Diagnóstico: {produtos.length} produtos ativos, vindos de {origem ? nomeOrigem[origem] : 'carregando…'}.
+        </p>
+      )}
     </footer>
   )
 }
